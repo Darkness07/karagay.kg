@@ -404,6 +404,8 @@ li {
 .shtorka__left_button{
     position: absolute;
     bottom: -30px;
+    left: -30px;
+
     width: 100%;
     display: flex;
     justify-content: center;
@@ -414,7 +416,6 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: -30px;
  
 }
 

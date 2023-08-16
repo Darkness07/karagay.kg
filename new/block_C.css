@@ -405,6 +405,8 @@ li {
     position: absolute;
     bottom: -30px;
     width: 100%;
+    left: -30px;
+
     display: flex;
     justify-content: center;
 }
@@ -413,9 +415,7 @@ li {
 .shtoka__info{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top: -30px;
- 
+    align-items: center; 
 }
 
 
