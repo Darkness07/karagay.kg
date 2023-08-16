@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:wght@600&family=MuseoModerno&family=Open+Sans:wght@300&family=Oswald&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto&family=Spectral+SC:wght@300&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f7f7;
+  transition: 0.5s;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  position: relative;
+  max-width: 200px;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  display: inline-block;
+  color: #116062;
+  font-weight: 500;
+  margin-left: 40px;
+  text-decoration: none;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -2%;
+}
+
+.content .textbox {
+  position: relative;
+  max-width: 600px;
+}
+
+.content .textbox h6 {
+  color: #116062;
+  font-size: 1.9em;
+  line-height: 2em;
+  font-weight: 900;
+}
+
+
+.content .textbox p {
+  color: #2d2d2d;
+}
+
+
+
+.content .imgbox {
+  width: 700px;
+  display: flex;
+  padding-right: 20px;
+  margin-top: 1px;
+  justify-content: flex-end;
+}
+
+.content .imgbox img {
+  max-width: 700px;
+}
+
+
+
+.tumb {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.tumb li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.tumb li:hover {
+  transform: translateY(-20px);
+}
+
+.tumb li img {
+  max-width: 100px;
+}
+
+.sci {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.sci li {
+  list-style: none;
+}
+
+.sci li a {
+  display: inline-block;
+  filter: invert(1);
+  margin: 5px 0;
+  transform: scale(0.6);
+}
+
+@media (max-width:991px) {
+  section {
+    padding: 20px;
+    padding-bottom: 145px;
+  }
+  header {
+    padding: 20px 40px;
+  }
+  header .logo {
+    position: relative;
+    max-width: 110px;
+  }
+  header ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff5ee;
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  header ul.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  header ul li a {
+    display: inline-block;
+    color: #111;
+    font-weight: 400;
+    margin-left: 0;
+    text-decoration: none;
+    font-size: 2em;
+    margin: 10px 0; 
+  }
+  header ul li a:hover {
+    color: #116062;
+  }
+  .menu {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url(menu.png);
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    z-index: 2;
+    cursor: pointer;
+    filter: invert(1);
+  }
+  .menu.active {
+    background: url(close.png);
+    background-position: center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    filter: invert(1);
+  }
+  .content {
+    flex-direction: column;
+    margin-top: 80px;
+  }
+  .content .textbox {
+    position: relative;
+    max-width: 100%;
+    padding-right: 20px;
+  }
+  .content .textbox h2 {
+    font-size: 3em;
+  }
+  .content .textbox a {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+  .content .imgbox {
+    width: 100%;
+    display: flex;
+    padding-right: 0;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .content .imgbox img {
+    max-width: 320px;
+  }
+  .tumb li img {
+    max-width: 70px;
+  }
+  .sci {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    background: rgba(0, 0, 0, 0.2);
+    transform: translateY(-50%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tumb {
+    bottom: 50px;
+  }
+}

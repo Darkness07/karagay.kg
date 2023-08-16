@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="main">
+
+    </div>
+
+    <script>
+
+        let main =document.querySelector('.main')
+        let lol = [
+            {pr:1, kv:1},
+            {pr:2, kv:2},
+            {pr:3, kv:3},
+            {pr:4, kv:4},
+            {pr:5, kv:5},
+        ]
+
+        lol.map(e=>{
+            const l = 
+            `
+                <p id='lol'>цена: ${e.pr}</p>
+                <p id='lol'>квартира: ${e.kv}</p>
+            `
+            main.insertAdjacentHTML("beforeend", l);
+
+        })
+
+    </script>
+
+</body>
+</html>

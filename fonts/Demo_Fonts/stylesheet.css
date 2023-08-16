@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Gluy Extra';
+    src: url('Gluy-ExtraBoldItalic.eot');
+    src: local('Gluy Extra Bold Italic'), local('Gluy-ExtraBoldItalic'),
+        url('Gluy-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-ExtraBoldItalic.woff2') format('woff2'),
+        url('Gluy-ExtraBoldItalic.woff') format('woff'),
+        url('Gluy-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy Extra';
+    src: url('Gluy-ExtraLight.eot');
+    src: local('Gluy Extra Light'), local('Gluy-ExtraLight'),
+        url('Gluy-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-ExtraLight.woff2') format('woff2'),
+        url('Gluy-ExtraLight.woff') format('woff'),
+        url('Gluy-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gluy Extra';
+    src: url('Gluy-ExtraBold.eot');
+    src: local('Gluy Extra Bold'), local('Gluy-ExtraBold'),
+        url('Gluy-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-ExtraBold.woff2') format('woff2'),
+        url('Gluy-ExtraBold.woff') format('woff'),
+        url('Gluy-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gluy Extra';
+    src: url('Gluy-ExtraLightItalic.eot');
+    src: local('Gluy Extra Light Italic'), local('Gluy-ExtraLightItalic'),
+        url('Gluy-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-ExtraLightItalic.woff2') format('woff2'),
+        url('Gluy-ExtraLightItalic.woff') format('woff'),
+        url('Gluy-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-Black.eot');
+    src: local('Gluy Black'), local('Gluy-Black'),
+        url('Gluy-Black.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-Black.woff2') format('woff2'),
+        url('Gluy-Black.woff') format('woff'),
+        url('Gluy-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gluy Book';
+    src: url('Gluy-BookItalic.eot');
+    src: local('Gluy Book Italic'), local('Gluy-BookItalic'),
+        url('Gluy-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-BookItalic.woff2') format('woff2'),
+        url('Gluy-BookItalic.woff') format('woff'),
+        url('Gluy-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy Book';
+    src: url('Gluy-Book.eot');
+    src: local('Gluy Book'), local('Gluy-Book'),
+        url('Gluy-Book.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-Book.woff2') format('woff2'),
+        url('Gluy-Book.woff') format('woff'),
+        url('Gluy-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-Bold.eot');
+    src: local('Gluy Bold'), local('Gluy-Bold'),
+        url('Gluy-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-Bold.woff2') format('woff2'),
+        url('Gluy-Bold.woff') format('woff'),
+        url('Gluy-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-BoldItalic.eot');
+    src: local('Gluy Bold Italic'), local('Gluy-BoldItalic'),
+        url('Gluy-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-BoldItalic.woff2') format('woff2'),
+        url('Gluy-BoldItalic.woff') format('woff'),
+        url('Gluy-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-BlackItalic.eot');
+    src: local('Gluy Black Italic'), local('Gluy-BlackItalic'),
+        url('Gluy-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-BlackItalic.woff2') format('woff2'),
+        url('Gluy-BlackItalic.woff') format('woff'),
+        url('Gluy-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy Hairline';
+    src: url('Gluy-HairlineItalic.eot');
+    src: local('Gluy Hairline Italic'), local('Gluy-HairlineItalic'),
+        url('Gluy-HairlineItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-HairlineItalic.woff2') format('woff2'),
+        url('Gluy-HairlineItalic.woff') format('woff'),
+        url('Gluy-HairlineItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-RegularItalic.eot');
+    src: local('Gluy Italic'), local('Gluy-RegularItalic'),
+        url('Gluy-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-RegularItalic.woff2') format('woff2'),
+        url('Gluy-RegularItalic.woff') format('woff'),
+        url('Gluy-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy Semi';
+    src: url('Gluy-SemiBold.eot');
+    src: local('Gluy Semi Bold'), local('Gluy-SemiBold'),
+        url('Gluy-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-SemiBold.woff2') format('woff2'),
+        url('Gluy-SemiBold.woff') format('woff'),
+        url('Gluy-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-LightItalic.eot');
+    src: local('Gluy Light Italic'), local('Gluy-LightItalic'),
+        url('Gluy-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-LightItalic.woff2') format('woff2'),
+        url('Gluy-LightItalic.woff') format('woff'),
+        url('Gluy-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-ThinItalic.eot');
+    src: local('Gluy Thin Italic'), local('Gluy-ThinItalic'),
+        url('Gluy-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-ThinItalic.woff2') format('woff2'),
+        url('Gluy-ThinItalic.woff') format('woff'),
+        url('Gluy-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy Hairline';
+    src: url('Gluy-Hairline.eot');
+    src: local('Gluy Hairline'), local('Gluy-Hairline'),
+        url('Gluy-Hairline.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-Hairline.woff2') format('woff2'),
+        url('Gluy-Hairline.woff') format('woff'),
+        url('Gluy-Hairline.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-Thin.eot');
+    src: local('Gluy Thin'), local('Gluy-Thin'),
+        url('Gluy-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-Thin.woff2') format('woff2'),
+        url('Gluy-Thin.woff') format('woff'),
+        url('Gluy-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-Light.eot');
+    src: local('Gluy Light'), local('Gluy-Light'),
+        url('Gluy-Light.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-Light.woff2') format('woff2'),
+        url('Gluy-Light.woff') format('woff'),
+        url('Gluy-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gluy Semi';
+    src: url('Gluy-SemiBoldItalic.eot');
+    src: local('Gluy Semi Bold Italic'), local('Gluy-SemiBoldItalic'),
+        url('Gluy-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-SemiBoldItalic.woff2') format('woff2'),
+        url('Gluy-SemiBoldItalic.woff') format('woff'),
+        url('Gluy-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gluy';
+    src: url('Gluy-Regular.eot');
+    src: local('Gluy'), local('Gluy-Regular'),
+        url('Gluy-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Gluy-Regular.woff2') format('woff2'),
+        url('Gluy-Regular.woff') format('woff'),
+        url('Gluy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

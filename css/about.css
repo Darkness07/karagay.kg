@@ -1,0 +1,29 @@
+.about_main_1{
+    width: 90%;
+    max-width: 1140px;
+    margin:100px auto;
+}
+.about_m1_1{
+    width: 80%;
+    max-width: 1140px;
+    margin:50px auto;
+    height: 400px;
+    background-image: url(../images/about_fon.jpg);
+    background-size: cover;
+    background-position: center bottom;
+}
+.glavnoe_block_h3__b{
+    color: #fff;
+}
+@media (max-width:550px){
+    .about_m1_1{
+        height: 300px;
+    }
+    
+}
+b{
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #25ddda7d;
+    text-transform: capitalize;
+}

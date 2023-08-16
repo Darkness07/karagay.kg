@@ -1,0 +1,487 @@
+<!-- <?php
+$dbh = new PDO('mysql:host=localhost; dbname=watchs;', 'root', '');
+$array = [];
+
+foreach($dbh->query('SELECT * from obj') as $row) {
+  if ($query = $dbh->query("SELECT * FROM `obj`")){
+      $array = $query->fetchAll(PDO::FETCH_ASSOC);
+  } else{
+      print_r ($db->errorInfo);
+  };
+}
+?> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fontawesome//////////////////////////////////////////// -->
+    <script src="https://kit.fontawesome.com/58a9a0347e.js" crossorigin="anonymous"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- fontawesome//////////////////////////////////////////// -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.1.0.js"></script>
+    <script src="https://atuin.ru/demo/ui-slider/jquery.ui.touch-punch.min.js"></script>
+    <script src="https://atuin.ru/demo/ui-slider/jquery-ui.min.js"></script>
+    <script src=""></script>
+    
+    <!-- model-viewer ////////////////////////// -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <!-- model-viewer ////////////////////////// -->
+
+    <!-- gsap/////////////////////////////////// -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/ScrollTrigger.min.js"></script>
+    <!-- gsap/////////////////////////////////// -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="./css/hover.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/options.css">
+    <title>Document</title>
+    <!-- <script>
+        var CV = <?= json_encode($array); ?>;
+    </script> -->
+</head>
+<body>
+    
+    <!-- ////////////////////////////// -->
+    
+    <div class="follow-cursor_1">
+        <p class="follow-cursor_1__p1" data-indicator_span_room></p>     
+        <div class="follow-cursor_1_block">
+            <p data-indicator_span_square>among us</p>
+            <p data-indicator_span_price></p>
+        </div>
+        </div>
+      </div>
+    <script>
+    const el1 = document.querySelector('.follow-cursor_1') 
+    window.addEventListener('mousemove', e => {
+        el1.style.left = e.pageX + 'px' 
+        el1.style.top = e.pageY + 'px' 
+    })
+    </script>
+    <!-- ////////////////////////////// -->
+
+    <div class="SSb_Bllock">
+        <div class="wrapper">
+            <div class="tabs contetns">
+                <div class="tab__item tab__item1 tab__item-active">
+                    <p class="tab__item__p">На ген плане </p>
+                </div>
+                <div class="tab__item tab__item2">
+                    <p class="tab__item__p">По параметрам </p>
+                </div>
+            </div>
+            
+
+            <div class="content">
+                <section class="GenPlan none">
+                    <div class="vibor__headers">
+                        <h1>Выберите блок </h1>
+                    </div>
+                    <div class="vibor__block contetns">
+                        <div class="vibor__block__idicator"><img src="./images/vibor__indicatrp.png" alt=""></div>
+                        <img src="./images/vibor__block__fon.png" alt="" class="vibor__block__img">
+                        <svg class="vibor__block_svg" viewBox="0 0 1440 904" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="vibor_block__path vibor_block__path-active" data-vybor_block="1" d="M619.875 597.25L608.625 382.938L625.5 371.125V363.812L662.625 343.562L671.062 346.938L695.812 331.75L786.938 355.375L793.125 358.75L813.938 363.812H817.875L862.312 374.5L852.188 587.688L844.875 593.875V606.812L813.938 640.562L801.562 636.625L781.875 656.875L619.875 597.25Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="2" d="M783 280L791.438 276.062V268.188L819 252.438L828 254.688L844.312 244L992.812 273.812L971.438 479.688L951.188 499.938L940.5 496L926.438 511.75L855.562 490.938L860.062 373.938L813.375 362.688V364.375L788.625 358.188V356.5L783 354.25V280Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="3" d="M954.562 178.75L1089 200.125V210.812L1077.19 313.75L995.625 332.312L989.438 408.812L978.75 407.125L991.125 275.5L905.625 258.062L908.438 204.625L914.062 201.812V195.625L934.875 184.375L942.188 186.062L954.562 178.75Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="4" d="M768.938 155.687L777.375 157.937L790.312 150.625L907.312 170.312L902.812 256.937L844.875 244.562L828 254.687L819.562 252.437L791.438 268.187V233.875L738 224.312V174.25L746.438 170.312V165.812L768.938 155.687Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="5" d="M596.25 238.937L608.062 233.875V228.812L639 214.75L644.625 217L663.75 209.125L791.438 233.312V268.75V275.5L782.438 282.25V355.937L694.688 334L671.625 348.062L660.938 344.687L639 357.625L636.188 319.375L599.625 309.812L596.25 238.937Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="6" d="M402.75 326.125L423 315.438V309.25L465.75 291.812L474.188 295.188L495.562 283.375L576.562 303.625L596.25 309.25H599.625L638.438 318.25V358.188L623.812 366.062V375.625L608.625 384.625L615.375 547.75L599.625 561.812L588.375 557.312L568.125 572.5L431.438 524.688L402.75 326.125Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="7" d="M640.125 127L748.125 142.75V164.687L746.438 166.375V170.312L738 174.812L737.438 226L663.75 210.25L646.312 217.562L637.875 215.312L619.312 223.75L618.188 199.562L588.938 194.5L586.125 147.812L596.25 143.875V139.937L621 130.375L627.188 132.625L640.125 127Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="8" d="M487.688 184.375L507.938 177.625L618.188 199L619.875 223.75L607.5 230.5V234.437L596.812 240.625L600.75 309.812L497.25 283.937L471.938 295.75L462.375 294.062L450.562 298.562L447.188 272.125L441 269.875L434.25 204.062L448.875 198.437V194.5L481.5 182.687L487.688 184.375Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="9" d="M229.5 278.312L252 269.875V264.812L293.062 250.188L304.875 251.312L332.438 241.75L448.312 271.562L452.25 297.438L423 309.812V315.438L402.75 326.125L426.938 490.375L416.25 496.562L406.688 493.188L382.5 505.562L266.062 465.062L229.5 278.312Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="10" d="M513.562 105.625L608.062 120.25V137.125L599.062 141.625L597.938 143.875L587.25 148.375L590.062 195.062L507.938 177.625L487.688 184.375L481.5 182.687L470.25 186.625L469.125 170.312L457.875 168.062L454.5 124.187L466.312 120.25V117.437L492.75 109.562H499.5L513.562 105.625Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="11" d="M370.125 150.625L469.125 170.312L470.25 186.625L448.875 194.5V198.437L434.25 204.062L441 269.875L332.438 241.75L306.562 250.75L294.75 172.562L309.938 168.625L311.062 165.25L345.375 155.687L351 157.375L370.125 150.625Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="12" d="M83.25 237.25L108.562 228.25L109.688 224.875L153 211.937L157.5 213.625L186.75 205.75L289.125 231.062L293.062 250.187L252 264.812V269.875L229.5 278.312L261 439.75L252.562 435.812L229.5 448.75L128.25 412.75L83.25 237.25Z" fill="#1450A9" fill-opacity="0.69"/>
+                            <path class="vibor_block__path" data-vybor_block="13" d="M995.062 331.75L1231.88 277.75L1348.31 323.875L1279.12 606.812L1062 693.438L968.625 616.375L995.062 331.75Z" fill="#1450A9" fill-opacity="0.69"/>
+                        </svg>
+                            
+                    </div>
+    
+                    <div class="vibor__kv contetns">
+                        <div class="vibor__headers vibor__kv__header">
+                            <h1>Выберите блок </h1>
+                        </div>
+                        <div class="vibor__kv__id">
+                            <p class="vibor__kv__id__p">Блок № 1</p>
+                        </div>
+                        <div class="vibor_kv__content">
+                            <div class="vibor_kv__content__left">
+                                <div class="vibor_kv__content__render">
+                                    <img src="./images/plan_kv_2-12.png" alt="">
+                                    <svg class="vibor_kv__svg" width="930" height="630" viewBox="0 0 930 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path class="vibor_kv__path" data-room="1" d="M528.259 10.4067H868.564V217.632H595.749V126.852H528.259V10.4067Z" fill="#1450A9" fill-opacity="0.69"/>
+                                        <path class="vibor_kv__path" data-room="2" d="M672.209 320.267L734.472 288.5V227.11H928.864V414.849H878.008V619.697H672.209V320.267Z" fill="#1450A9" fill-opacity="0.69"/>
+                                        <path class="vibor_kv__path" data-room="3" d="M469.456 319.259H670.978V606.807H647.213V622.491H567.841H469.456V319.259Z" fill="#1450A9" fill-opacity="0.69"/>
+                                        <path class="vibor_kv__path" data-room="4" d="M267 395H362V320H460V619.5H366.5V605.5H267V395Z" fill="#1450A9" fill-opacity="0.69"/>
+                                        <path class="vibor_kv__path" data-room="5" d="M10 319H352V377.5L325 377V386.5H258V605H160V619.48H61.5V406.5H10V319Z" fill="#1450A9" fill-opacity="0.69"/>
+                                        <path class="vibor_kv__path" data-room="6" d="M59.9051 9H377V219.077H267.13V310.332H8V213.848H59.9051V9Z" fill="#1450A9" fill-opacity="0.69"/>
+                                    </svg>
+                                </div>      
+                            </div>
+                            <div class="vibor_kv__content__right">
+                                <div class="viborKv_right__header">
+                                    <p>Этаж: 1</p>
+                                </div>
+                                <div class="viborKv__right__items">
+                                    <div data-vibor-etaj="10" class="viborKv__right__item viborKv__right__item_10"><p class="viborKv__right__item__P">10-этаж</p></div>
+                                    <div data-vibor-etaj="9" class="viborKv__right__item viborKv__right__item_9" ><p class="viborKv__right__item__P">9-этаж</p></div>
+                                    <div data-vibor-etaj="8" class="viborKv__right__item viborKv__right__item_8" ><p class="viborKv__right__item__P">8-этаж</p></div>
+                                    <div data-vibor-etaj="7" class="viborKv__right__item viborKv__right__item_7" ><p class="viborKv__right__item__P">7-этаж</p></div>
+                                    <div data-vibor-etaj="6" class="viborKv__right__item viborKv__right__item_6" ><p class="viborKv__right__item__P">6-этаж</p></div>
+                                    <div data-vibor-etaj="5" class="viborKv__right__item viborKv__right__item_5" ><p class="viborKv__right__item__P">5-этаж</p></div>
+                                    <div data-vibor-etaj="4" class="viborKv__right__item viborKv__right__item_4" ><p class="viborKv__right__item__P">4-этаж</p></div>
+                                    <div data-vibor-etaj="3" class="viborKv__right__item viborKv__right__item_3" ><p class="viborKv__right__item__P">3-этаж</p></div>
+                                    <div data-vibor-etaj="2" class="viborKv__right__item viborKv__right__item_2 viborKv__right__item-active" ><p class="viborKv__right__item__P">2-этаж</p></div>
+                                    <div data-vibor-etaj="1" class="viborKv__right__item viborKv__right__item_1"  ><p>1-этаж</p></div>
+                                    <div data-vibor-etaj="Подвал" class="viborKv__right__item viborKv__right__item_0" ><p class="viborKv__right__item__P">подвал</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="vibor_info contetns">
+                        <div class="vibor__headers">
+                            <h1>Информация о квартире </h1>
+                        </div>
+                        <div class="vibor_info__content">
+                            <div class="vibor_info__left">
+                                <div class="vibor_info__left__2d__img"><img src="./images/planirovki/plan/kv__planirovka1.png" alt=""></div>                                        
+                            </div>
+                            <div class="vibor_info__right">
+                                <div class="vibor_info__right_top">
+                                    <div class="vibor_info__right_nameBlock">
+                                        <p>Блок №<span class="vibor_info__right_nameBlock_span">1</span></p>
+                                    </div>
+                                    <div class="vibor_info__right_nameEtaj">
+                                        <p>Этаж<span class="vibor_info__right_nameEtaj__span"></span></p>
+                                    </div>
+                                </div>
+                                <div class="vibor__render__content">
+                                    <div class="vibor__render__block">
+                                        <div class="vibor_info__right_center">
+                                            <div class="vibor_info__right_center__item vibor_info__right_center__item_1">
+                                                <p class="vibor_info__center__info">Площадь:</p>
+                                                <p class="vibor_info__center__otvet">79,16</p>
+                                            </div>
+                                            <div class="vibor_info__right_center__item vibor_info__right_center__item_2">
+                                                <p class="vibor_info__center__info">Комнаты:</p>
+                                                <p class="vibor_info__center__otvet">2</p>
+                                            </div>
+                                            <div class="vibor_info__right_center__item vibor_info__right_center__item_3">
+                                                <p class="vibor_info__center__info">Статус:</p>
+                                                <p class="vibor_info__center__otvet">Свободно</p>
+                                            </div>
+                                            <div class="vibor_info__right_center__item vibor_info__right_center__item_4">
+                                                <p class="vibor_info__center__info">Рассрочка:</p>
+                                                <p class="vibor_info__center__otvet">возможна</p>
+                                            </div>
+                                            <div class="vibor_info__right_center__item vibor_info__right_center__item_5">
+                                                <p class="vibor_info__center__info">Цена за м2:</p>
+                                                <p class="vibor_info__center__otvet">45 000 </p>
+                                            </div>
+                                            <div class="vibor_info__right_center__item vibor_info__right_center__item_6">
+                                                <p class="vibor_info__center__info">Цена:</p>
+                                                <p class="vibor_info__center__otvet">4 500 000 </p>
+                                            </div>
+                                        </div>
+                                        <div class="vibor_info__right_bar">
+                                            <div class="vibor_info__right_bar__header">
+                                                <p>Особенности</p>
+                                            </div>
+                                            <div class="vibor_info__right_bar__items">
+                                                <div class="vibor_info__right_bar__item"><p>Лоджия</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="Options">
+                    <div class="Options__content contetns">
+                        <div class="filter__bar">
+                            <div class="filter__bar__header">
+                                <p>Фильтр по квартирам </p>
+                            </div>
+                            <div class="filter__bar__contetn">
+                                <div class="filter__bar__item filter__bar__level">
+                                    <div class="filter__bar__hint">
+                                        <p class="filter__bar__hint__p">Типы квартир:</p>
+                                    </div>
+                                    <div class="filter__block">
+                                        <div class="filter__bar__level__block">
+                                            <p>1-ур</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="filter__bar__item">
+                                    <div class="filter__bar__hint">
+                                        <p class="filter__bar__hint__p">Стоимость квартиры:  </p>
+                                    </div>
+                                    <div class="filter__block">
+                                        <div class="polzunok-container-price polzunok-containe">
+                                            <input type="text" class="polzunok-input-price-left polzunok-input-left" />
+                                            <input type="text" class="polzunok-input-price-right polzunok-input-right"/>
+                                            <div class="polzunok-price"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter__bar__item">
+                                    <div class="filter__bar__hint">
+                                        <p class="filter__bar__hint__p">Площадь квартиры:</p>
+                                    </div>
+                                    <div class="filter__block">
+                                        <div class="polzunok-container-m2 polzunok-containe">
+                                            <input type="text" class="polzunok-input-m2-left polzunok-input-left" />
+                                            <input type="text" class="polzunok-input-m2-right polzunok-input-right"/>
+                                            <div class="polzunok-m2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter__bar__item">
+                                    <div class="filter__bar__hint">
+                                        <p class="filter__bar__hint__p">Этаж:   </p>
+                                    </div>
+                                    <div class="filter__block">
+                                        <div class="polzunok-container-floor polzunok-containe">
+                                            <input type="text" class="polzunok-input-floor-left polzunok-input-left" />
+                                            <input type="text" class="polzunok-input-floor-right polzunok-input-right"/>
+                                            <div class="polzunok-floor"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <div class="filter__bar__item filter__bar__vBlocks">
+                                    <div class="filter__bar__hint">
+                                        <p class="filter__bar__hint__p">Блок:</p>
+                                    </div>
+                                    <div class="filter__block">
+                                        <div class="filter__vBlocks__top">
+                                           <input type="checkbox" id="option"><label for="option">Все блоки:</label> 
+                                        </div>
+                                        <div class="filter__vBlocks__item">
+                                            <div style="display: flex;">
+                                                <ul class="filter__vBlocks__item__ul">
+                                                    <li><label><input type="checkbox" class="subOption">Блок №1</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №2</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №3</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №4</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №5</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №6</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №7</label></li>
+                                                </ul>
+                                                <ul class="filter__vBlocks__item__ul">
+                                                    <li><label><input type="checkbox" class="subOption">Блок №8</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №9</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №10</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №11</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №12</label></li>
+                                                    <li><label><input type="checkbox" class="subOption">Блок №13</label></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+                                <div class="filter__bar__item filter__bar__res__info__length">
+                                    <div class="filter__block">
+                                        <p>Мы подобрали для вас <samp>5</samp> квартир </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="filter__res">
+                            <div class="filter__res__header">
+                                <p>Показывать только свободные </p>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                  </label>
+                            </div>
+                            <div class="filter__res__content">
+                                <div class="filter_res__item">
+                                    <p class="filter_res__item__p">Двухуровневая квартира <span>120</span> м2</p>
+                                    <img src="./images/planirovki/plan/kv__planirovka2.png" alt="" class="filter_res__item__img">
+                                    <div class="filter_res_item__description">
+                                        <div class="filter_res__description__block filter_res__description__block_1">
+                                            <p>Блок: </p>
+                                            <p>Этаж: </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_2">
+                                            <p>1</p>
+                                            <p>1 из 10</p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_3">
+                                            <p>6 500 000 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_4">
+                                            <p>Ежемесячный платеж: </p>
+                                            <p>45 650 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_5">
+                                            <button>Узнать больше</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter_res__item">
+                                    <p class="filter_res__item__p">Двухуровневая квартира <span>120</span> м2</p>
+                                    <img src="./images/planirovki/plan/kv__planirovka2.png" alt="" class="filter_res__item__img">
+                                    <div class="filter_res_item__description">
+                                        <div class="filter_res__description__block filter_res__description__block_1">
+                                            <p>Блок: </p>
+                                            <p>Этаж: </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_2">
+                                            <p>1</p>
+                                            <p>1 из 10</p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_3">
+                                            <p>6 500 000 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_4">
+                                            <p>Ежемесячный платеж: </p>
+                                            <p>45 650 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_5">
+                                            <button>Узнать больше</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter_res__item">
+                                    <p class="filter_res__item__p">Двухуровневая квартира <span>120</span> м2</p>
+                                    <img src="./images/planirovki/plan/kv__planirovka2.png" alt="" class="filter_res__item__img">
+                                    <div class="filter_res_item__description">
+                                        <div class="filter_res__description__block filter_res__description__block_1">
+                                            <p>Блок: </p>
+                                            <p>Этаж: </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_2">
+                                            <p>1</p>
+                                            <p>1 из 10</p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_3">
+                                            <p>6 500 000 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_4">
+                                            <p>Ежемесячный платеж: </p>
+                                            <p>45 650 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_5">
+                                            <button>Узнать больше</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter_res__item">
+                                    <p class="filter_res__item__p">Двухуровневая квартира <span>120</span> м2</p>
+                                    <img src="./images/planirovki/plan/kv__planirovka2.png" alt="" class="filter_res__item__img">
+                                    <div class="filter_res_item__description">
+                                        <div class="filter_res__description__block filter_res__description__block_1">
+                                            <p>Блок: </p>
+                                            <p>Этаж: </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_2">
+                                            <p>1</p>
+                                            <p>1 из 10</p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_3">
+                                            <p>6 500 000 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_4">
+                                            <p>Ежемесячный платеж: </p>
+                                            <p>45 650 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_5">
+                                            <button>Узнать больше</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filter_res__item">
+                                    <p class="filter_res__item__p">Двухуровневая квартира <span>120</span> м2</p>
+                                    <img src="./images/planirovki/plan/kv__planirovka2.png" alt="" class="filter_res__item__img">
+                                    <div class="filter_res_item__description">
+                                        <div class="filter_res__description__block filter_res__description__block_1">
+                                            <p>Блок: </p>
+                                            <p>Этаж: </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_2">
+                                            <p>1</p>
+                                            <p>1 из 10</p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_3">
+                                            <p>6 500 000 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_4">
+                                            <p>Ежемесячный платеж: </p>
+                                            <p>45 650 сомов </p>
+                                        </div>
+                                        <div class="filter_res__description__block filter_res__description__block_5">
+                                            <button>Узнать больше</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="./js/changeTab.js"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+</html>

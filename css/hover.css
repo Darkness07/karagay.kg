@@ -1,0 +1,12 @@
+:root {
+    --whait: rgb(255, 255, 255);
+    --black: #000;
+    --planirovaABC-color: #000;
+    --text-color: #000;
+    --svg-hover: rgba(0, 132, 255, 0.483);
+    --transition_03: all 0.3s ease;
+    --planirovaABC_font-size: 14px;
+    --stroca_width: 1200px;
+    --stroca-margin: 0 auto;
+}
+

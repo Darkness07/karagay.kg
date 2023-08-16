@@ -1,0 +1,24 @@
+:root{
+    --whait: #fff;
+    --content-color:#000;
+    --text-color:#000;
+    --transition_03: all 0.3s ease;
+    --content_font-size: 14px;
+    --stroca_width:1200px;
+    --stroca-margin:0 auto;
+}
+
+/* @media (max-width:1200px) {
+    
+} */
+/* @media (max-width: 1280px) {
+    .vibor__block,.vibor__block__svg{
+        width: 1100px;
+        height: 687px;
+    }
+}
+@media (max-width: 480px) {
+    .vibor__block{
+        width: 90%;
+    }
+} */
