@@ -417,6 +417,14 @@ li {
 }
 
 
+/* .shtoka__info h1{
+    font-size: 20px;
+    font-weight: normal;
+} */
+.shtoka__info__right_title.c1{
+    display: none;
+    margin: 20px 0 -100px;
+}
 .shtoka__info__left{
     padding: 15px;
     display: flex;

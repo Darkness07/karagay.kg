@@ -221,6 +221,7 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
           <div class="shtorka__header">3Д планировка квартир</div>
           <div class="shtorka__left__img"><a href="#image_focus"><img src="" alt=""></a></div>
           <div class="shtoka__info">
+            <p class="shtoka__info__right_title c1">О КВАРТИРЕ</p>
             <div class="shtoka__info__left">
               <div class="shtoka__info__left_l">
                 <div class="lang" data-ru data-lang="0">
@@ -981,6 +982,12 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
     .shtoka__info__right, .shtoka__info__right input{
       background-color: red!important;
       color: black!important;
+    }
+    .shtoka__info__left{
+      justify-content: space-between;
+    }
+    .shtoka__info__right_title.c1{
+      display: block!important;
     }
   }
 </style>
