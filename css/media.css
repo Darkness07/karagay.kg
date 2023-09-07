@@ -1,0 +1,725 @@
+    :root {
+    --whait: rgb(255, 255, 255);
+    --black: #000;
+    --planirovaABC-color: #000;
+    --text-color: #000;
+    --svg-hover: #19bbb865;
+    --transition_03: all 0.3s ease;
+    --planirovaABC_font-size: 14px;
+    --stroca_width: 1200px;
+    --stroca-margin: 0 auto;
+}
+
+@media (max-width: 1620px) {
+    .glavnoe_content{
+        width: 1400px;
+        padding-top: 0px;
+    }
+}
+
+@media (max-width:1430px) {
+    .main_4 {
+        height: 700px;
+    }
+
+    .m4_1 {
+        font-size: 40px;
+    }
+
+    .m5_block {
+        width: 1000px;
+    }
+
+    .about_block {
+        width: 1000px;
+    }
+ .glavnoe_content{
+     width: 1200px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .viewe__360{
+        width: 1200px;
+    }
+}
+ 
+@media (max-width:1300px){
+    .map__wrapper{
+        width: 70%;
+    }
+    .footer_block{
+        width: 100%;
+    }
+}
+@media (max-width:1200px){
+    .area-h1{
+        font-size: 50px!important;
+    }
+    .area h4{
+        font-size: 18px;
+    }
+    .area h2 {
+        font-size: 25px;
+    }
+    .glavnoe_content{
+        padding-top: 0;
+    }
+    .viewe__360{
+        width: 1000px;
+    }
+
+} 
+@media (max-width:1100px) {
+    .m3_h1 {
+        display: none;
+    }
+
+    .main_4 {
+        height: 650px;
+    }
+
+    .m4_1 {
+        font-size: 30px;
+    }
+
+    .m5_block {
+        width: 850px;
+    }
+
+    .m5_lf h4 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .m5_lf p {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    .about_block {
+        width: 800px;
+    }
+    .tiles_bl3{
+        width: 59%;
+    }
+    .tiles_bl4{
+        width: 39%;
+    }
+    .tiles_bl3 b{
+        font-size: 70px;
+    }
+    .viewe__360{
+        width: 800px;
+    }
+
+}
+
+
+@media (max-width:900px) {
+    .map__wrapper{
+        width: 50%;
+    }
+    .m3_rg {
+        margin: 10px auto;
+    }
+
+    .m3_span {
+        font-size: 30px;
+    }
+
+    .main_4 {
+        height: 500px;
+    }
+
+    .m4_1 {
+        font-size: 25px;
+    }
+
+    .m5_block {
+        width: 650px;
+        height: 600px;
+        flex-direction: column-reverse;
+    }
+
+    .m5_lf {
+        width: 100%;
+        height: 35%;
+        padding: 10px 50px;
+    }
+
+    .m5_rg {
+        width: 90%;
+        height: 60%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    }
+
+    .m5_lf h4 {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .m5_lf p {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    .footer_lf {
+        width: 300px;
+        padding: 20px;
+    }
+
+    .footer_lf h3 {
+        font-size: 20px;
+    }
+
+    .about_block {
+        width: 650px;
+    }
+    .area-h1{
+        display: none;
+    }
+    .area_rg{
+        width: 65%;
+    }
+    .tiles_bl{
+        width: 100%;
+    }
+    .tiles_bl3 b{
+        font-size: 80px;
+    }
+    .glavnoe_img{
+        right: 5px;
+        top: auto;
+        bottom: auto;
+        margin: auto 0;
+        width: 300px;
+    }
+    
+}
+
+
+@media (max-width:730px) {
+    .m3_rg {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .main_4 {
+        height: 450px;
+    }
+
+    .m4_1 {
+        font-size: 20px;
+        width: 70%;
+    }
+
+    .m4_2 {
+        width: 70%;
+    }
+
+    .m5_block {
+        width: 500px;
+    }
+
+    .footer_rg {
+        display: none;
+    }
+
+    .footer_lf {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .razbor_5_bottom{
+        width: 100%;
+        margin: 0;
+    }
+
+    .footer_lf p {
+        margin: auto;
+    }
+
+    .footer_lf h3 {
+        font-size: 20px;
+    }
+
+    .razbor_top{
+        width: 90%;
+        margin: 50px auto;
+    }
+    #razbor_carousel{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .razbor_top_block{
+        flex-direction: column;
+    }
+    .razbor_top_block div{
+        width: 90%;
+        margin: 0 auto
+    }
+    .carousel-inner_1{
+        width: 100%;
+    }
+    .razbor_5 .razbor_top_block1{
+        padding: 100px 10px;
+    }
+    .razbor_4 .razbor_top_block2{
+        margin-top: 50px;
+    }
+    .razbor_bottom{
+        width: 100%;
+    }
+    .about_block {
+        width: 500px;
+    }
+
+    .about_block h2 {
+        font-size: 20px;
+    }
+
+    .about_block p {
+        font-size: 12px;
+    }
+    .razbor_5_block_1{width: 100%;}
+    .razbor_5_block_2{width: 100%;}
+    .razbor_5_block_3{width: 100%;}
+    .razbor_5_block_4{width: 100%;}
+    .razbor_indicator__wrapper{
+        display: none;
+    }
+    .tiles_bl3 p{
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width:550px) {
+    .m3_span {
+        font-size: 22px;
+    }
+
+    .main_4 {
+        height: 400px;
+    }
+
+    .m4_1 {
+        font-size: 16px;
+    }
+
+    .m5_block {
+        width: 400px;
+    }
+
+    .footer_lf h3 {
+        font-size: 16px;
+    }
+
+    .about_block {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .about_left {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .about_right {
+        width: 90%;
+        margin: 10px auto;
+    }
+    .area_lf{
+        display: none;
+    }
+    .area {
+        background-color: #000;
+    }
+    .area_rg{
+        width: 90%;
+    }
+    .area h1{
+        font-size: 30px;
+    }
+    .area h4{
+        font-size: 14px;
+    }
+    .area h2{
+        font-size: 20px;
+    }
+    .tiles_bl{
+        height: 500px;    
+    }
+    .tiles_bl3{
+        height: auto;
+    }
+    .tiles_bl3 b{
+        font-size: 50px;
+    }
+    .galavnoe1 .glavnoe_block_h3__span {
+        font-size: 28px;
+    }
+    .footer__content__down{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .map__wrapper{
+        width: 100%;
+    }
+}
+
+
+@media (max-width:480px) {
+    .main_4 {
+        height: 350px;
+    }
+
+    .m4_1 {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .m5_block {
+        width: 90%;
+        height: auto;
+        min-height: 500px;
+        justify-content: start;
+    }
+
+    .m5_rg {
+        min-height: 260px;
+        margin: 10px auto;
+    }
+
+    .m5_lf {
+        min-height: 200px;
+        padding: 40px;
+    }
+
+    .footer_lf p {
+        width: 90%;
+        font-size: 11px;
+    }
+
+    .about_left {
+        display: none;
+    }
+    .tiles_bl h2{
+        top: -100px;
+    }
+    .galavnoe1 .glavnoe_block_h3__span {
+        font-size: 25px;
+    }
+}
+
+/* roma media  */
+
+@media (max-width: 1600px) {
+    .nav {
+        width: 90%;
+    }
+}
+
+@media (max-width: 1320px) {
+    .nav__center{
+        width: 700px;
+    }
+    .nav_link__a{
+        font-size: 16px;
+
+    }
+}
+@media (max-width: 1200px) {
+    .nav {
+        width: 1000px;
+    }
+
+    .nav__contacts_button {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .nav {
+        width: 900px;
+    }
+
+    .nav_link__icon {
+        display: flex;
+    }
+
+    .nav__contacts {
+        display: none;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .nav {
+        width: 800px;
+    }
+
+    .nav__center {
+        display: none;
+    }
+
+    .roma__nav {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    .nav {
+        width: 90%;
+    }
+    .footer__content{
+        flex-wrap: wrap;
+
+    }
+    .viewe__360{
+        width: 600px;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .stroca_2__block {
+        width: 90%;
+        padding: 10%;
+    }
+
+    .galavnoe__item {
+        font-size: 44px;
+    }
+}
+
+
+@media (max-width: 640px) {
+    .stroca2_item_right p {
+        font-size: 22px;
+    }
+    
+    .glavnoe_block_h4_span{
+        font-size: 40px;
+    }
+    .stroca2_item_right p:last-child {
+        font-size: 18px;
+    }
+    .glavnoe_block_h3__b{
+        font-size: 50px;
+    }
+    .glavnoe_block_h4{
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width: 600px){
+    
+    .footer h3{
+        font-size: 12px;
+    } 
+    .footer__content p, 
+    .footer__content a,
+    .footer__content i{
+        font-size: 15px;
+    }
+    .ft_block{
+        width: 179px;
+    }
+    .viewe__360{
+        width: 90%;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+    .b24-form-header-title {
+        line-height: 39px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .stroca2_block_item {
+        flex-direction: column;
+        justify-content: left;
+        align-items: baseline;
+    }
+
+    .galavnoe__item {
+        top: 150px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+
+    }
+
+    .do-footer {
+        height: 540px;
+    }
+}
+
+@media (max-width: 400px) {
+    .galavnoe__item {
+        top: 300px;
+        font-size: 30px;
+    }
+    .glavnoe_block_h4_span{
+        font-size: 30px;
+    }
+    .glavnoe_block_h4{
+        font-size: 30px;
+    }
+}
+
+
+/* kalculyator media  */
+
+
+@media (max-width: 1200px) {
+    .calculator__content {
+        width: 95%;
+    }
+}
+
+@media (max-width: 765px) {
+    .calculator__vibor_item__select {
+        width: 30%;
+    }
+}
+
+@media (max-width: 500px) {
+    .calculator__vibor_item__select {
+        width: 100%;
+    }
+
+    .calculator__vibor_item,
+    .calculator__otvet_item {
+        flex-direction: column;
+    }
+
+    .calculator__content__p::after {
+        bottom: -74px;
+    }
+}
+
+
+
+/* stroca3 media  */
+
+@media (max-width:1200px) {
+    .stroca-3 {
+        width: 1000px;
+    }
+
+    .glavnoe_content {
+        width: 90%;
+    }
+    .indicator_etaj-active{
+        display: none!important;
+    }
+}
+
+
+@media (max-width:1000px) {
+    .stroca-3 {
+        width: 900px;
+    }
+
+    .stroca3- {
+        background-size: cover;
+        background-position: 50%;
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width:900px) {
+    .stroca-3 {
+        width: 90%;
+    }
+
+    .stroca3__block {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .scroca3_content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .stroca3__item {
+        margin-top: 50px;
+    }
+    .do-footer{
+        height: auto;
+    }
+    .b24-form-wrapper{
+        width: 90%;
+    }
+    .do-footer__block button{
+        width: 80%;
+        height: auto;
+        padding: 0 10px;
+    }
+
+}
+
+
+@media (max-width:660px) {
+    .scroca3_content {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .stroca3__item {
+        margin: 15px auto;
+    }
+    .ft_block{
+        width: 246px;
+        padding: 0;
+    }
+    .b24-form-header-title{
+        font-size: 18px!important;
+    }
+}
+
+@media (max-width:350px) {
+    .stroca3__item {
+        width: 100%;
+    }
+    .calculator__headr {
+        font-size: 24px;
+    }
+    .calculator__vibor_item p{
+        /* font-size: 20px; */
+    }
+    .b24-form-header-title {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width:1300px) {
+    .galavnoe__fon{
+        bottom: 0;
+    }
+}
+@media (max-height:700px) {
+    .glavnoe_content{
+        padding-top: 0;
+    }
+}
+
+
+
+
+

@@ -1,32 +1,31 @@
  <?php
-$dbh = new PDO('mysql:host=176.126.165.65; port=3306; dbname=user105050_planirovka_a;', 'user105050_root', 'nJ9xZ9rK2u');
-$array = [];
-$array_1 = [];
-$curs = [];
+ //$dbh = new PDO('mysql:host=176.126.165.65; port=3306; dbname=user105050_planirovka_a;', 'user105050_root', 'nJ9xZ9rK2u');
+ //$array = [];
+//
+//
+ //foreach ($dbh->query('SELECT * from planirovka_c') as $row) {
+ //  if ($query = $dbh->query("SELECT * FROM `planirovka_c`")) {
+ //    $array = $query->fetchAll(PDO::FETCH_ASSOC);
+ //  } else {
+ //    print_r($db->errorInfo);
+ //  }
+ //  ;
+ //}
 
-foreach($dbh->query('SELECT * from planirovka_c') as $row) {
-  if ($query = $dbh->query("SELECT * FROM `planirovka_c`")){
-      $array = $query->fetchAll(PDO::FETCH_ASSOC);
-  } else{
-      print_r ($db->errorInfo);
-  };
-}
-foreach($dbh->query('SELECT * from этажи_B/C') as $row) {
-    if ($query = $dbh->query("SELECT * FROM `этажи_B/C`")){
-        $array_1 = $query->fetchAll(PDO::FETCH_ASSOC);
-    } else{
-        print_r ($db->errorInfo);
-    };
-}
-foreach($dbh->query('SELECT * from dollar_som') as $row) {
-      if ($query = $dbh->query("SELECT * FROM `dollar_som`")){
-          $curs = $query->fetchAll(PDO::FETCH_ASSOC);
-      } else{
-          print_r ($db->errorInfo);
-      };
+
+ $dbh = new PDO('mysql:host=localhost; dbname=user105050_planirovka_a;', 'root', '');
+ 
+
+ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
+  if ($query = $dbh->query("SELECT * FROM `planirovka_a`")) {
+    $array = $query->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+    print_r($db->errorInfo);
   }
-?>    
-
+  ;
+}
+ 
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,18 +150,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
               </div>
             </div>
           </div>
-  <svg width="2578" height="1891" viewBox="0 0 2578 1891" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M2351.5 1890H2577V1754.5L2351.5 1725L1 1777.5V1890H2351.5Z" fill="#D9D9D9"/>
-    <path d="M2351.5 1725L2577 1754.5V1591.5L2351.5 1522.5L1 1651V1777.5L2351.5 1725Z" fill="#D9D9D9"/>
-    <path d="M2351.5 1522.5L2577 1591.5V1408.5L2351.5 1308.5L1 1504.5V1651L2351.5 1522.5Z" fill="#D9D9D9"/>
-    <path d="M2351.5 1308.5L2577 1408.5V1225.5L2351.5 1095L1 1376V1504.5L2351.5 1308.5Z" fill="#D9D9D9"/>
-    <path d="M1 1376L2351.5 1095L2577 1225.5V1073L2351.5 876.5L1 1231V1376Z" fill="#D9D9D9"/>
-    <path d="M2351.5 876.5L2577 1073L2571 865L2351.5 647.5L1 1095V1231L2351.5 876.5Z" fill="#D9D9D9"/>
-    <path d="M1 1095L2351.5 647.5L2571 865V718L2351.5 451.5L1 957.5V1095Z" fill="#D9D9D9"/>
-    <path d="M2351.5 451.5L2571 718V532L2351.5 231L1 829.5V957.5L2351.5 451.5Z" fill="#D9D9D9"/>
-    <path d="M1 829.5L2351.5 231L2571 532V362.5L2351.5 1L1 647.5V829.5Z" fill="#D9D9D9"/>
-    <path d="M2577 1754.5V1890H2351.5H1V1777.5M2577 1754.5L2351.5 1725L1 1777.5M2577 1754.5V1591.5M1 1777.5V1651M2577 1591.5L2351.5 1522.5L1 1651M2577 1591.5V1408.5M1 1651V1504.5M2577 1408.5L2351.5 1308.5L1 1504.5M2577 1408.5V1225.5M1 1504.5V1376M1 1376L2351.5 1095L2577 1225.5M1 1376V1231M2577 1225.5V1073M2577 1073L2351.5 876.5L1 1231M2577 1073L2571 865M1 1231V1095M1 1095L2351.5 647.5L2571 865M1 1095V957.5M2571 865V718M2571 718L2351.5 451.5L1 957.5M2571 718V532M1 957.5V829.5M1 829.5L2351.5 231L2571 532M1 829.5V647.5L2351.5 1L2571 362.5V532" stroke="black"/>
-  </svg>
+
 
           <div class="lang" data-kg data-lang="1">
             <div class="nav__contacts">
@@ -245,13 +233,33 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                         </div>
                     </div>
                     <div class="shtorka__left_button">
-                      <div class="lang" data-ru data-lang="0">
-                        <button data-raschet-btn-ru class="deff__btn print__btn">расчет</button>
-                      </div>
-                      <div class="lang" data-kg data-lang="1">
-                        <button data-raschet-btn-ru class="deff__btn print__btn">эсептөө</button>
-                      </div>
-                    </div>
+            <div class="lang" data-ru data-lang="0">
+              <button data-raschet-btn-ru class="deff__btn print__btn">расчет</button>
+            </div>
+            <div class="lang" data-kg data-lang="1">
+              <button data-raschet-btn-ru class="deff__btn print__btn">эсептөө</button>
+            </div>
+     <!-- TELEPORT /////////////////////////// -->
+
+     <div class="lang" data-ru data-lang="0">
+              <button data-win_print="" class="deff__btn">Сохранить</button>
+            </div>
+            <div class="lang" data-kg data-lang="1">
+              <button data-win_print="" class="deff__btn">Сактоо</button>
+            </div>
+            
+            <div class="lang" data-ru data-lang="0">
+              <button class="bronirovat deff__btn " data-bron_KV>Забронировать</button>
+            </div>
+            <div class="lang" data-kg data-lang="1">
+              <button class="bronirovat deff__btn " data-bron_KV>бронь кылу</button>
+            </div>
+
+<!-- TELEPORT /////////////////////////// -->
+
+
+          </div>
+
                 </div>
                 <div class="shtorka__rght">
                   <div class="lang" data-ru data-lang="1">
@@ -261,10 +269,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                     <div class="shtorka__header">Батирлердин 2D макети</div>
                   </div>
                      <div class="shtorka__rght__img"><a href="#image_focus_1"><img src="" alt=""></a></div>
-                     <div class="shtorka__rght__btn">
-                      <button data-win_print class="deff__btn">печать</button>
-                      <a href="https://drive.google.com/file/d/1rAIgEHH6z9fVJ12XRchwUeWwSnpbACDb/view?usp=share_link" <button class="PDF_BTN deff__btn">скачать PDF</button> </a>
-                    </div>
+
                 </div>
             </div>
 
@@ -306,6 +311,42 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
             <div class="name_page">
                 <p>Блок <span>"В"</span></p>
             </div>
+
+            <!-- TELEPORT /////////////////////////// -->
+  <div class="form_wrapper">
+    <div class="form_wrapper__fon"></div>
+    <div class="form-container">
+        <div class="scene_1">
+            <p>Заполните поля</p>
+            <form id="dealForm"> <!-- Добавлен идентификатор "dealForm" для формы -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Имя</label> <!-- Изменен "for" и "id" для соответствия JS -->
+                    <input type="text" class="form-control name" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Телефон</label> <!-- Изменен "for" и "id" для соответствия JS -->
+                    <input type="tel" class="form-control phone" id="phone" name="phone" required>
+                </div>
+                <div class="form__button">
+                    <button type="submit" data-submit-post="" class="submit-btn btn btn-primary">Отправить</button> <!-- Заменен "type" на "submit" -->
+                    <button type="button" class="btn btn-primary form-close" data-close-form>Закрыть</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="scene_2 none">
+        <div class="close_form" data-close-form><i class="fa-solid fa-xmark" data-close-form></i></div>
+            <div class="romajon-container">
+                <svg class="romajon-svg" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path class="romajon-path" d="M 18 32.34 l -8.34 -8.34 -2.83 2.83 11.17 11.17 24 -24 -2.83 -2.83 z" stroke="#3da35a" fill="transparent"/>
+                </svg>
+            </div>
+            <span>Мы получили заявку!<br>Наши специалисты с вами свяжутся.</span>
+        </div>
+    </div>
+</div>
+
+<!-- TELEPORT /////////////////////////// -->
             <div class="content__block">
                 <div class="content__block__item Content__block__left">
                     <div class="lang" data-ru data-lang="0">
@@ -321,7 +362,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                     <div class="content__left__block">
                         <div class="content__left__block_3d">
                           <img src="./images/block/В.png" alt="" class="content__left__block_3d_img">
-                            <svg class="content__left__block_3d__svg" width="702" height="702" viewBox="0 0 702 702" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="content__left__block_3d__svg" width="100% " viewBox="0 0 702 702" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path data-etaj="8" class="filter__btn content__left__block_3d_path_9" d="M619 272.5L205.5 211.5L189 217L167 214.5L120.5 236.5L122.5 175L169.5 137L190.5 141.5V138.5L208 126L295.5 143.5L318.5 130.5L347 136.5V162L358 157.5L453 176.5V182.5L471.5 186V182.5L476.5 181.5L486.5 184L513.5 174.5L533 178.5L533.5 201L546.5 197L617 212L619 272.5Z" fill="#19BBB9" fill-opacity="0.5" stroke="#0BD8D5" stroke-width="1.5"/>
                               <path data-etaj="7" class="filter__btn content__left__block_3d_path_8" d="M619 272.5L205.5 211.5L189 217L167 214.5L120.5 236.5L119 278L167 256.5L188 259L204.5 255.5L620 302.5L619 272.5Z" fill="#19BBB9" fill-opacity="0.5"/>
                               <path data-etaj="6" class="filter__btn content__left__block_3d_path_7" d="M204.5 255.5L620 302.5L621 334L203.5 299.5C198.167 300.333 187.4 302 187 302C186.6 302 172.5 300.667 165.5 300L117.5 316L119 278L167 256.5L188 259L204.5 255.5Z" fill="#19BBB9" fill-opacity="0.5"/>
@@ -395,7 +436,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                     <div class="content__right__block">
                         <section class="Planirovca">
                             <img src="./images/Planirovca_1/Planirovca_color_B.png" alt="">
-                            <svg class="planirovca_item_svg et_1" width="722" height="511" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="planirovca_item_svg et_1" width="722" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M315 259.183V287.399H288.884V270.325H286.987V293.621H315V391H303.911H268.311V292.029H266.561V370.453H227.897V366.547H226V305.92H227.751V305.341H244.967V300.711H253.721V291.161H251.97V298.974H244.967V294.344H226V281.032H253.721V279.296H226V259.183H315Z" fill="white" fill-opacity="0.01"/>
                               <path d="M226 121H263.351V139.087H256.348V144.296H266.415V222.72H268.311V123.605H315V220.839H286.841V244.424H288.738V227.206H315V255.421H226V220.26H244.967V215.63L251.825 215.775V223.588H253.575V213.749H244.967V209.119H227.897V207.961H226V121Z" fill="white" fill-opacity="0.01"/>
                               <path d="M370.81 121H409V207.961H407.061V213.749H389.607V218.09H383.49V220.26H389.607H409V259.183V279.296V294.344H389.607L380.208 294.199V296.225H402.585V300.711H407.21V305.92H409V366.547H407.061V370.453H367.528V294.534H365.738V391H329.338H318V293.621H346.643V272.206H344.703V287.399H318V227.206H344.852V248.042H346.792V220.839H318V123.605H365.738L365.589 144.296H369.02V222.72H370.81V144.296H377.97V139.087H370.81V121Z" fill="white" fill-opacity="0.01"/>
@@ -415,7 +456,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                               <path class="planirovca_item_path" data-room="9" d="M632.233 124H591.806L592.096 204.417H614.12V208.764H619.192V210.793H592.096H565V238.323H590.937V256H654.692H707V201.809H686.714V200.65H684.831V208.764H685.845V216.443H678.31V215.574H652.953V209.633H678.31V208.764H681.498V124H634.116V211.517H632.233V124Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                               <path class="planirovca_item_path" data-room="10" d="M590.524 269.692V258H707V312.808H686.154V298.923H653.062V304.915H678.428V305.792H681.78V391H588.628V374.338H593.731V366.592H592.856V349.346H588.628V305.792H593.731V297.9H586.004V305.792H586.733V366.592H586.004V374.338H586.879V391H543V322.892H574.488V320.554H570.989V309.592H569.24V320.554H547.373V299.946H570.989V269.692H590.524Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                             </svg>
-                            <svg class="planirovca_item_svg et_2 anime" width="722" height="511" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="planirovca_item_svg et_2 anime" width="722" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M315 259.183V287.399H288.884V270.325H286.987V293.621H315V391H303.911H268.311V292.029H266.561V370.453H227.897V366.547H226V305.92H227.751V305.341H244.967V300.711H253.721V291.161H251.97V298.974H244.967V294.344H226V281.032H253.721V279.296H226V259.183H315Z" fill="white" fill-opacity="0.01"/>
                               <path d="M226 121H263.351V139.087H256.348V144.296H266.415V222.72H268.311V123.605H315V220.839H286.841V244.424H288.738V227.206H315V255.421H226V220.26H244.967V215.63L251.825 215.775V223.588H253.575V213.749H244.967V209.119H227.897V207.961H226V121Z" fill="white" fill-opacity="0.01"/>
                               <path d="M370.81 121H409V207.961H407.061V213.749H389.607V218.09H383.49V220.26H389.607H409V259.183V279.296V294.344H389.607L380.208 294.199V296.225H402.585V300.711H407.21V305.92H409V366.547H407.061V370.453H367.528V294.534H365.738V391H329.338H318V293.621H346.643V272.206H344.703V287.399H318V227.206H344.852V248.042H346.792V220.839H318V123.605H365.738L365.589 144.296H369.02V222.72H370.81V144.296H377.97V139.087H370.81V121Z" fill="white" fill-opacity="0.01"/>
@@ -435,7 +476,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                               <path class="planirovca_item_path" data-room="20" d="M632.233 124H591.806L592.096 204.417H614.12V208.764H619.192V210.793H592.096H565V238.323H590.937V256H654.692H707V201.809H686.714V200.65H684.831V208.764H685.845V216.443H678.31V215.574H652.953V209.633H678.31V208.764H681.498V124H634.116V211.517H632.233V124Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                               <path class="planirovca_item_path" data-room="21" d="M590.524 269.692V258H707V312.808H686.154V298.923H653.062V304.915H678.428V305.792H681.78V391H588.628V374.338H593.731V366.592H592.856V349.346H588.628V305.792H593.731V297.9H586.004V305.792H586.733V366.592H586.004V374.338H586.879V391H543V322.892H574.488V320.554H570.989V309.592H569.24V320.554H547.373V299.946H570.989V269.692H590.524Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                             </svg>
-                            <svg class="planirovca_item_svg et_3 anime" width="722" height="511" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="planirovca_item_svg et_3 anime" width="722" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M315 259.183V287.399H288.884V270.325H286.987V293.621H315V391H303.911H268.311V292.029H266.561V370.453H227.897V366.547H226V305.92H227.751V305.341H244.967V300.711H253.721V291.161H251.97V298.974H244.967V294.344H226V281.032H253.721V279.296H226V259.183H315Z" fill="white" fill-opacity="0.01"/>
                               <path d="M226 121H263.351V139.087H256.348V144.296H266.415V222.72H268.311V123.605H315V220.839H286.841V244.424H288.738V227.206H315V255.421H226V220.26H244.967V215.63L251.825 215.775V223.588H253.575V213.749H244.967V209.119H227.897V207.961H226V121Z" fill="white" fill-opacity="0.01"/>
                               <path d="M370.81 121H409V207.961H407.061V213.749H389.607V218.09H383.49V220.26H389.607H409V259.183V279.296V294.344H389.607L380.208 294.199V296.225H402.585V300.711H407.21V305.92H409V366.547H407.061V370.453H367.528V294.534H365.738V391H329.338H318V293.621H346.643V272.206H344.703V287.399H318V227.206H344.852V248.042H346.792V220.839H318V123.605H365.738L365.589 144.296H369.02V222.72H370.81V144.296H377.97V139.087H370.81V121Z" fill="white" fill-opacity="0.01"/>
@@ -455,7 +496,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                               <path class="planirovca_item_path" data-room="31" d="M632.233 124H591.806L592.096 204.417H614.12V208.764H619.192V210.793H592.096H565V238.323H590.937V256H654.692H707V201.809H686.714V200.65H684.831V208.764H685.845V216.443H678.31V215.574H652.953V209.633H678.31V208.764H681.498V124H634.116V211.517H632.233V124Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                               <path class="planirovca_item_path" data-room="32" d="M590.524 269.692V258H707V312.808H686.154V298.923H653.062V304.915H678.428V305.792H681.78V391H588.628V374.338H593.731V366.592H592.856V349.346H588.628V305.792H593.731V297.9H586.004V305.792H586.733V366.592H586.004V374.338H586.879V391H543V322.892H574.488V320.554H570.989V309.592H569.24V320.554H547.373V299.946H570.989V269.692H590.524Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                             </svg>
-                            <svg class="planirovca_item_svg et_4 anime" width="722" height="511" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="planirovca_item_svg et_4 anime" width="722" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M315 259.183V287.399H288.884V270.325H286.987V293.621H315V391H303.911H268.311V292.029H266.561V370.453H227.897V366.547H226V305.92H227.751V305.341H244.967V300.711H253.721V291.161H251.97V298.974H244.967V294.344H226V281.032H253.721V279.296H226V259.183H315Z" fill="white" fill-opacity="0.01"/>
                               <path d="M226 121H263.351V139.087H256.348V144.296H266.415V222.72H268.311V123.605H315V220.839H286.841V244.424H288.738V227.206H315V255.421H226V220.26H244.967V215.63L251.825 215.775V223.588H253.575V213.749H244.967V209.119H227.897V207.961H226V121Z" fill="white" fill-opacity="0.01"/>
                               <path d="M370.81 121H409V207.961H407.061V213.749H389.607V218.09H383.49V220.26H389.607H409V259.183V279.296V294.344H389.607L380.208 294.199V296.225H402.585V300.711H407.21V305.92H409V366.547H407.061V370.453H367.528V294.534H365.738V391H329.338H318V293.621H346.643V272.206H344.703V287.399H318V227.206H344.852V248.042H346.792V220.839H318V123.605H365.738L365.589 144.296H369.02V222.72H370.81V144.296H377.97V139.087H370.81V121Z" fill="white" fill-opacity="0.01"/>
@@ -475,7 +516,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                               <path class="planirovca_item_path" data-room="42" d="M632.233 124H591.806L592.096 204.417H614.12V208.764H619.192V210.793H592.096H565V238.323H590.937V256H654.692H707V201.809H686.714V200.65H684.831V208.764H685.845V216.443H678.31V215.574H652.953V209.633H678.31V208.764H681.498V124H634.116V211.517H632.233V124Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                               <path class="planirovca_item_path" data-room="43" d="M590.524 269.692V258H707V312.808H686.154V298.923H653.062V304.915H678.428V305.792H681.78V391H588.628V374.338H593.731V366.592H592.856V349.346H588.628V305.792H593.731V297.9H586.004V305.792H586.733V366.592H586.004V374.338H586.879V391H543V322.892H574.488V320.554H570.989V309.592H569.24V320.554H547.373V299.946H570.989V269.692H590.524Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                             </svg>
-                            <svg class="planirovca_item_svg et_5 anime" width="722" height="511" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="planirovca_item_svg et_5 anime" width="722" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M315 259.183V287.399H288.884V270.325H286.987V293.621H315V391H303.911H268.311V292.029H266.561V370.453H227.897V366.547H226V305.92H227.751V305.341H244.967V300.711H253.721V291.161H251.97V298.974H244.967V294.344H226V281.032H253.721V279.296H226V259.183H315Z" fill="white" fill-opacity="0.01"/>
                               <path d="M226 121H263.351V139.087H256.348V144.296H266.415V222.72H268.311V123.605H315V220.839H286.841V244.424H288.738V227.206H315V255.421H226V220.26H244.967V215.63L251.825 215.775V223.588H253.575V213.749H244.967V209.119H227.897V207.961H226V121Z" fill="white" fill-opacity="0.01"/>
                               <path d="M370.81 121H409V207.961H407.061V213.749H389.607V218.09H383.49V220.26H389.607H409V259.183V279.296V294.344H389.607L380.208 294.199V296.225H402.585V300.711H407.21V305.92H409V366.547H407.061V370.453H367.528V294.534H365.738V391H329.338H318V293.621H346.643V272.206H344.703V287.399H318V227.206H344.852V248.042H346.792V220.839H318V123.605H365.738L365.589 144.296H369.02V222.72H370.81V144.296H377.97V139.087H370.81V121Z" fill="white" fill-opacity="0.01"/>
@@ -495,7 +536,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                               <path class="planirovca_item_path" data-room="53" d="M632.233 124H591.806L592.096 204.417H614.12V208.764H619.192V210.793H592.096H565V238.323H590.937V256H654.692H707V201.809H686.714V200.65H684.831V208.764H685.845V216.443H678.31V215.574H652.953V209.633H678.31V208.764H681.498V124H634.116V211.517H632.233V124Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                               <path class="planirovca_item_path" data-room="54" d="M590.524 269.692V258H707V312.808H686.154V298.923H653.062V304.915H678.428V305.792H681.78V391H588.628V374.338H593.731V366.592H592.856V349.346H588.628V305.792H593.731V297.9H586.004V305.792H586.733V366.592H586.004V374.338H586.879V391H543V322.892H574.488V320.554H570.989V309.592H569.24V320.554H547.373V299.946H570.989V269.692H590.524Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                             </svg>
-                            <svg class="planirovca_item_svg et_6 anime" width="722" height="511" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="planirovca_item_svg et_6 anime" width="722" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M315 259.183V287.399H288.884V270.325H286.987V293.621H315V391H303.911H268.311V292.029H266.561V370.453H227.897V366.547H226V305.92H227.751V305.341H244.967V300.711H253.721V291.161H251.97V298.974H244.967V294.344H226V281.032H253.721V279.296H226V259.183H315Z" fill="white" fill-opacity="0.01"/>
                               <path d="M226 121H263.351V139.087H256.348V144.296H266.415V222.72H268.311V123.605H315V220.839H286.841V244.424H288.738V227.206H315V255.421H226V220.26H244.967V215.63L251.825 215.775V223.588H253.575V213.749H244.967V209.119H227.897V207.961H226V121Z" fill="white" fill-opacity="0.01"/>
                               <path d="M370.81 121H409V207.961H407.061V213.749H389.607V218.09H383.49V220.26H389.607H409V259.183V279.296V294.344H389.607L380.208 294.199V296.225H402.585V300.711H407.21V305.92H409V366.547H407.061V370.453H367.528V294.534H365.738V391H329.338H318V293.621H346.643V272.206H344.703V287.399H318V227.206H344.852V248.042H346.792V220.839H318V123.605H365.738L365.589 144.296H369.02V222.72H370.81V144.296H377.97V139.087H370.81V121Z" fill="white" fill-opacity="0.01"/>
@@ -515,7 +556,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                               <path class="planirovca_item_path" data-room="64" d="M632.233 124H591.806L592.096 204.417H614.12V208.764H619.192V210.793H592.096H565V238.323H590.937V256H654.692H707V201.809H686.714V200.65H684.831V208.764H685.845V216.443H678.31V215.574H652.953V209.633H678.31V208.764H681.498V124H634.116V211.517H632.233V124Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                               <path class="planirovca_item_path" data-room="65" d="M590.524 269.692V258H707V312.808H686.154V298.923H653.062V304.915H678.428V305.792H681.78V391H588.628V374.338H593.731V366.592H592.856V349.346H588.628V305.792H593.731V297.9H586.004V305.792H586.733V366.592H586.004V374.338H586.879V391H543V322.892H574.488V320.554H570.989V309.592H569.24V320.554H547.373V299.946H570.989V269.692H590.524Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                             </svg>
-                            <svg class="planirovca_item_svg et_7 anime" width="722" height="511" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="planirovca_item_svg et_7 anime" width="722" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M315 259.183V287.399H288.884V270.325H286.987V293.621H315V391H303.911H268.311V292.029H266.561V370.453H227.897V366.547H226V305.92H227.751V305.341H244.967V300.711H253.721V291.161H251.97V298.974H244.967V294.344H226V281.032H253.721V279.296H226V259.183H315Z" fill="white" fill-opacity="0.01"/>
                               <path d="M226 121H263.351V139.087H256.348V144.296H266.415V222.72H268.311V123.605H315V220.839H286.841V244.424H288.738V227.206H315V255.421H226V220.26H244.967V215.63L251.825 215.775V223.588H253.575V213.749H244.967V209.119H227.897V207.961H226V121Z" fill="white" fill-opacity="0.01"/>
                               <path d="M370.81 121H409V207.961H407.061V213.749H389.607V218.09H383.49V220.26H389.607H409V259.183V279.296V294.344H389.607L380.208 294.199V296.225H402.585V300.711H407.21V305.92H409V366.547H407.061V370.453H367.528V294.534H365.738V391H329.338H318V293.621H346.643V272.206H344.703V287.399H318V227.206H344.852V248.042H346.792V220.839H318V123.605H365.738L365.589 144.296H369.02V222.72H370.81V144.296H377.97V139.087H370.81V121Z" fill="white" fill-opacity="0.01"/>
@@ -535,7 +576,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                               <path class="planirovca_item_path" data-room="75" d="M632.233 124H591.806L592.096 204.417H614.12V208.764H619.192V210.793H592.096H565V238.323H590.937V256H654.692H707V201.809H686.714V200.65H684.831V208.764H685.845V216.443H678.31V215.574H652.953V209.633H678.31V208.764H681.498V124H634.116V211.517H632.233V124Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                               <path class="planirovca_item_path" data-room="76" d="M590.524 269.692V258H707V312.808H686.154V298.923H653.062V304.915H678.428V305.792H681.78V391H588.628V374.338H593.731V366.592H592.856V349.346H588.628V305.792H593.731V297.9H586.004V305.792H586.733V366.592H586.004V374.338H586.879V391H543V322.892H574.488V320.554H570.989V309.592H569.24V320.554H547.373V299.946H570.989V269.692H590.524Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                             </svg>
-                            <svg class="planirovca_item_svg et_8 anime" width="722" height="511" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="planirovca_item_svg et_8 anime" width="722" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M315 259.183V287.399H288.884V270.325H286.987V293.621H315V391H303.911H268.311V292.029H266.561V370.453H227.897V366.547H226V305.92H227.751V305.341H244.967V300.711H253.721V291.161H251.97V298.974H244.967V294.344H226V281.032H253.721V279.296H226V259.183H315Z" fill="white" fill-opacity="0.01"/>
                               <path d="M226 121H263.351V139.087H256.348V144.296H266.415V222.72H268.311V123.605H315V220.839H286.841V244.424H288.738V227.206H315V255.421H226V220.26H244.967V215.63L251.825 215.775V223.588H253.575V213.749H244.967V209.119H227.897V207.961H226V121Z" fill="white" fill-opacity="0.01"/>
                               <path d="M370.81 121H409V207.961H407.061V213.749H389.607V218.09H383.49V220.26H389.607H409V259.183V279.296V294.344H389.607L380.208 294.199V296.225H402.585V300.711H407.21V305.92H409V366.547H407.061V370.453H367.528V294.534H365.738V391H329.338H318V293.621H346.643V272.206H344.703V287.399H318V227.206H344.852V248.042H346.792V220.839H318V123.605H365.738L365.589 144.296H369.02V222.72H370.81V144.296H377.97V139.087H370.81V121Z" fill="white" fill-opacity="0.01"/>
@@ -555,7 +596,7 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
                               <path class="planirovca_item_path" data-room="86" d="M632.233 124H591.806L592.096 204.417H614.12V208.764H619.192V210.793H592.096H565V238.323H590.937V256H654.692H707V201.809H686.714V200.65H684.831V208.764H685.845V216.443H678.31V215.574H652.953V209.633H678.31V208.764H681.498V124H634.116V211.517H632.233V124Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                               <path class="planirovca_item_path" data-room="87" d="M590.524 269.692V258H707V312.808H686.154V298.923H653.062V304.915H678.428V305.792H681.78V391H588.628V374.338H593.731V366.592H592.856V349.346H588.628V305.792H593.731V297.9H586.004V305.792H586.733V366.592H586.004V374.338H586.879V391H543V322.892H574.488V320.554H570.989V309.592H569.24V320.554H547.373V299.946H570.989V269.692H590.524Z" fill="white" fill-opacity="0.01" stroke="black" stroke-width="0.593876"/>
                             </svg>
-                            <svg class="planirovca_item_svg et_9 anime" width="722" height="511" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="planirovca_item_svg et_9 anime" width="722" viewBox="0 0 722 511" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M315 259.183V287.399H288.884V270.325H286.987V293.621H315V391H303.911H268.311V292.029H266.561V370.453H227.897V366.547H226V305.92H227.751V305.341H244.967V300.711H253.721V291.161H251.97V298.974H244.967V294.344H226V281.032H253.721V279.296H226V259.183H315Z" fill="white" fill-opacity="0.01"/>
                               <path d="M226 121H263.351V139.087H256.348V144.296H266.415V222.72H268.311V123.605H315V220.839H286.841V244.424H288.738V227.206H315V255.421H226V220.26H244.967V215.63L251.825 215.775V223.588H253.575V213.749H244.967V209.119H227.897V207.961H226V121Z" fill="white" fill-opacity="0.01"/>
                               <path d="M370.81 121H409V207.961H407.061V213.749H389.607V218.09H383.49V220.26H389.607H409V259.183V279.296V294.344H389.607L380.208 294.199V296.225H402.585V300.711H407.21V305.92H409V366.547H407.061V370.453H367.528V294.534H365.738V391H329.338H318V293.621H346.643V272.206H344.703V287.399H318V227.206H344.852V248.042H346.792V220.839H318V123.605H365.738L365.589 144.296H369.02V222.72H370.81V144.296H377.97V139.087H370.81V121Z" fill="white" fill-opacity="0.01"/>
@@ -710,12 +751,16 @@ foreach($dbh->query('SELECT * from dollar_som') as $row) {
     </body>
     
     <script>
-    var curs_dollar = <?= json_encode($curs); ?>;
-
+  fetch('https://www.cbr-xml-daily.ru/daily_json.js').then(async(result) => {
+  if (result.status === 200 && result.ok) {
+      return result.json()
+  }
+  }).then((JSON_DATA) => {
+    kurs_USD = (10 / JSON_DATA.Valute.KGS.Value) * JSON_DATA.Valute.USD.Value
+    return kurs_USD
+  })
      var CV = <?= json_encode($array); ?>;
-    var CV_etaj = <?= json_encode($array_1); ?>;
-// var CV = [{"id":"1", "vznos":"30","room":"3","etaj":"1","bron":"0","sold":"0","square":"90.6","price":"1000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"2","room":"2","etaj":"1","bron":"0","sold":"1","square":"72","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"3","room":"1","etaj":"1","bron":"0","sold":"0","square":"42.92","price":"2090000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"4","room":"1","etaj":"1","bron":"0","sold":"0","square":"42.92","price":"2090000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"5","room":"2","etaj":"1","bron":"0","sold":"1","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"6","room":"2","etaj":"1","bron":"0","sold":"1","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"7","room":"1","etaj":"1","bron":"0","sold":"0","square":"46.3","price":"2250000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"8","room":"3","etaj":"2","bron":"0","sold":"1","square":"90.6","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"9","room":"2","etaj":"2","bron":"1","sold":"0","square":"72","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"10","room":"1","etaj":"2","bron":"0","sold":"0","square":"42.92","price":"2150000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"11","room":"1","etaj":"2","bron":"0","sold":"0","square":"42.92","price":"2150000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"12","room":"2","etaj":"2","bron":"0","sold":"1","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"13","room":"2","etaj":"2","bron":"0","sold":"1","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"14","room":"1","etaj":"2","bron":"0","sold":"0","square":"46.3","price":"2300000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"15","room":"3","etaj":"3","bron":"0","sold":"1","square":"90.6","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"16","room":"2","etaj":"3","bron":"0","sold":"0","square":"72","price":"3500000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"17","room":"1","etaj":"3","bron":"1","sold":"0","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"18","room":"1","etaj":"3","bron":"1","sold":"0","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"19","room":"2","etaj":"3","bron":"1","sold":"0","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"20","room":"2","etaj":"3","bron":"1","sold":"0","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"21","room":"1","etaj":"3","bron":"0","sold":"1","square":"46.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"22","room":"3","etaj":"4","bron":"0","sold":"0","square":"90.6","price":"4300000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"23","room":"1","etaj":"4","bron":"0","sold":"0","square":"72","price":"3500000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"24","room":"1","etaj":"4","bron":"0","sold":"1","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"25","room":"1","etaj":"4","bron":"0","sold":"1","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png'","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"26","room":"2","etaj":"4","bron":"0","sold":"1","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"27","room":"2","etaj":"4","bron":"0","sold":"1","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"28","room":"1","etaj":"4","bron":"0","sold":"0","square":"46.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"29","room":"3","etaj":"5","bron":"0","sold":"1","square":"90.6","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"30","room":"2","etaj":"5","bron":"0","sold":"0","square":"72","price":"3500000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"31","room":"1","etaj":"5","bron":"0","sold":"0","square":"42.92","price":"2150000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"32","room":"1","etaj":"5","bron":"0","sold":"1","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"33","room":"2","etaj":"5","bron":"1","sold":"0","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"34","room":"2","etaj":"5","bron":"0","sold":"1","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"35","room":"1","etaj":"5","bron":"0","sold":"0","square":"46.3","price":"2250000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"36","room":"3","etaj":"6","bron":"1","sold":"0","square":"90.6","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"37","room":"2","etaj":"6","bron":"0","sold":"0","square":"72","price":"3400000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"38","room":"1","etaj":"6","bron":"0","sold":"1","square":"42.92","price":"0","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"39","room":"1","etaj":"6","bron":"0","sold":"0","square":"42.92","price":"2100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"40","room":"2","etaj":"6","bron":"0","sold":"0","square":"69","price":"3250000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"41","room":"2","etaj":"6","bron":"1","sold":"0","square":"65.3","price":"0","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"42","room":"1","etaj":"6","bron":"1","sold":"0","square":"46.3","price":"0","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"43","room":"3","etaj":"7","bron":"0","sold":"0","square":"90.6","price":"4150000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"44","room":"2","etaj":"7","bron":"0","sold":"0","square":"72","price":"3400000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"45","room":"1","etaj":"7","bron":"0","sold":"0","square":"42.92","price":"2100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"46","room":"2","etaj":"7","bron":"0","sold":"0","square":"42.92","price":"2100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"47","room":"2","etaj":"7","bron":"0","sold":"0","square":"69","price":"3250000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"48","room":"2","etaj":"7","bron":"0","sold":"0","square":"65.3","price":"3500000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"49","room":"1","etaj":"7","bron":"1","sold":"0","square":"46.3","price":"0","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"50","room":"3","etaj":"8","bron":"0","sold":"0","square":"90.6","price":"3990000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"51","room":"2","etaj":"8","bron":"0","sold":"0","square":"72","price":"3250000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"52","room":"1","etaj":"8","bron":"0","sold":"0","square":"42.92","price":"2000000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"53","room":"1","etaj":"8","bron":"0","sold":"0","square":"42.92","price":"2000000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"54","room":"2","etaj":"8","bron":"0","sold":"0","square":"69","price":"3100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"55","room":"2","etaj":"8","bron":"0","sold":"0","square":"65.3","price":"2950000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"56","room":"1","etaj":"8","bron":"0","sold":"0","square":"46.3","price":"2200000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"57","room":"3","etaj":"9","bron":"0","sold":"0","square":"90.6","price":"3990000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"58","room":"2","etaj":"9","bron":"0","sold":"0","square":"72","price":"3250000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"59","room":"1","etaj":"9","bron":"0","sold":"0","square":"42.92","price":"1990000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"60","room":"1","etaj":"9","bron":"0","sold":"0","square":"42.92","price":"1990000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"61","room":"2","etaj":"9","bron":"0","sold":"0","square":"69","price":"3100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"62","room":"2","etaj":"9","bron":"0","sold":"0","square":"65.3","price":"2950000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"63","room":"1","etaj":"9","bron":"0","sold":"0","square":"46.3","price":"2200000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"}];
-// var CV_etaj=[{kv}]
+
 
 var roma__navs = document.querySelectorAll('.roma__nav');
 roma__navs.forEach(roma__nav =>{
@@ -776,13 +821,30 @@ window.addEventListener('click', function(event){
 
 
         
-        
-let kurs_USD=curs_dollar[0].dollar;
-        let data_etaj=1;
-        all_data= new Date()
-        month_data= all_data.getMonth()
-        year_data= all_data.getYear()
-        let data_1 = 1
+let data_etaj = 1;
+  all_data = new Date()
+  month_data = all_data.getMonth()
+  year_data = all_data.getYear()
+  let data_1 = 1
+
+  const reserveBtn = document.querySelector('[data-bron_KV]');
+  const formContainer = document.querySelector('.form-container');
+  const closeButton = document.querySelector('.form-close');
+  const submitBtn = document.querySelector('.submit-btn');
+  const confirmationBox = document.querySelector('.confirmation-box');
+  const form_wrapper = document.querySelector('.form_wrapper')
+  
+  var name = document.querySelector('.name').value;
+  var phone = document.querySelector('.phone').value;
+  
+  
+      var romajonButton = document.querySelector('.romajon-button');
+      var romajonContainer = document.querySelector('.romajon-container');
+      var romajonCheckmark = document.querySelector('.romajon-svg');
+      var romajonClassName = "animate";
+      var scene_1 = document.querySelector('.scene_1');
+      var scene_2 = document.querySelector('.scene_2');
+
         window.addEventListener('click', function (event) {
           if (event.target.hasAttribute('data-etaj')) {
             l=document.querySelector('.content_li_active')
@@ -873,6 +935,21 @@ let kurs_USD=curs_dollar[0].dollar;
             document.querySelector('#image_focus_1').insertAdjacentHTML("beforeend", infoCart_2);
         }
 
+
+        
+  
+      // ***********************************************************************************************************************//
+   
+    if(event.target.hasAttribute('data-bron_KV')){
+      form_wrapper.classList.add('show');
+    }
+    if(event.target.hasAttribute('data-close-form')){
+      form_wrapper.classList.remove('show');
+    }
+      // ***********************************************************************************************************************//
+
+
+
     //    калькулятор///////////////
         calculator_input_month=document.querySelector('#info__right__block_month')
         calculator_input_vznos=document.querySelector('.info__right__block_vzno_sum')
@@ -901,6 +978,84 @@ let kurs_USD=curs_dollar[0].dollar;
           }
         }
      });
+
+     
+     document.getElementById('dealForm').addEventListener('submit', function(e) {
+
+e.preventDefault();
+
+const name = document.getElementById('name').value;
+const phone = document.getElementById('phone').value;
+
+// Данные для создания контакта в Битрикс24
+const contactData = {
+    fields: {
+        NAME: name,
+        PHONE: [{VALUE: phone, VALUE_TYPE: 'WORK'}],
+      }
+    };
+
+    console.log(CV[data_1].room, CV[data_1].square + ' m²', Number(data_etaj) + 1);
+    // Отправка запроса на создание контакта через веб-хук
+    fetch('https://karagay.bitrix24.kz/rest/67/h82kihgg5n6x24fk/crm.contact.add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(contactData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.result) {
+        // Контакт успешно создан, теперь создаем сделку и связываем с контактом
+        const contactId = data.result;
+        const dealData = {
+          fields: {
+            TITLE: 'Заявка на бронирование',
+            CONTACT_ID: contactId,
+            COMMENTS:"AMONG US",
+            COMMENTS:`Блок: А > Этадж: ${Number(data_etaj) + 1} > плошадь ${CV[data_1].square + ' m²'} | ${CV[data_1].room} комнаты`,
+            UF_CRM_1693590597: Number(data_etaj) + 1, // Можете заполнить значениями
+        UF_CRM_1693590626: CV[data_1].room, // Можете заполнить значениями
+        UF_CRM_1693736225: CV[data_1].square + ' m²', // Можете заполнить значениями
+            }
+        };
+        
+        // Отправка запроса на создание сделки через веб-хук
+        fetch('https://karagay.bitrix24.kz/rest/67/h82kihgg5n6x24fk/crm.deal.add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dealData)
+        })
+        .then(response => response.json())
+        .then(dealResult => {
+      
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+    } else {
+        alert('Произошла ошибка при создании контакта.');
+    }
+})
+.catch(error => {
+    console.error('Ошибка:', error);
+});
+
+if (!romajonCheckmark.classList.contains(romajonClassName)) {
+  romajonCheckmark.classList.add(romajonClassName);
+     scene_1.classList.add('none')
+     scene_2.classList.remove('none')
+
+      setTimeout(function(){      
+        form_wrapper.classList.remove('show');
+      }, 7000);  
+   } 
+});
+
+
 
    
     const el1 = document.querySelector('.follow-cursor_1') 
@@ -947,141 +1102,114 @@ let kurs_USD=curs_dollar[0].dollar;
      })
 </script>
 <style>
-  .print_screan{
+.print_screan {
     position: absolute;
     top: 0;
     left: 0;
     display: none;
   }
+
   @media print {
-    html, body{
+
+    /* html,
+    body {
       height: 297mm;
       width: 210mm;
+    } */
+
+    .calculator__headr {
+      margin-top: 200px;
     }
-    .calculator__headr{margin-top: 200px;}
+
     .content {
       margin-top: -100px;
     }
-    .shtorka{
-      height: 1800px!important;
-    }
-}   
 
-@media print {
-.shtorka_div_button, .shtorka__rght__btn, .wrapper, footer, .b24-widget-button-wrapper, .nav- , footer, .left, .glavnoe_content, [data-lang="1"],.do-footer, .calculator__content_button, [data-b24-crm-button-cont] {
-display: none!important;
-}
-.print_screan{
-display: block;
-}
-.calculator__otvet input{
-border-color: var(--content);
-}
-.shtorka__left{
-  margin-top: -30px;
-}
-.shtorka__rght img,
-.shtorka__left img{
-  width: 620px;
-}
-.shtoka__info__left {
-    margin: 70px 0 0;
-}
-[data-raschet-btn-ru]{
-  display: none;
-}
-
-
-}
-
-@media (max-width:800px){
-  .content__left__block_btns {
-    width: 100%;
-    left: 0;
-    left: 0;
-    margin: auto;
-    bottom: -35%;
-}
-    
-    .content__left__block_btns::after{
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        top: auto;
-        bottom: 3.5px;
-        width: 100%;
-        height: 3px;
-
+    .shtorka {
+      height: 1800px !important;
     }
-    .content__left__block__ul{
-        width: 80%;
-        left: 0;
-        right: 0;
+    .form_wrapper{
+      display: none;
     }
-
-    .content__left__block__ul{
-        flex-direction: row;
-        height: auto;
-        margin-bottom: 0px;
-    }
-    .content__left__block__li {
-        width: auto;
-        display: block;
-    }
-    .content__left__block_btn {
-        width: 10px !important;
-        height: 10px !important;
-    }
-    .content__left__block_3d{
-        z-index: 10;
-    }
-    
-}
-
-@media (max-width:450px){
-
-    .content__left__block{
-        margin-top: 0px;
-    }
-    .content__block__item__header_p{
-        font-size: 22px;
-    }
-}
-
-@media (max-width:230px){
-    .content__block__item__header_p{
-        font-size: 18px;
-    }
-    
-}
-
-
-@media (max-width:350px){
-    .content__left__block_btns{
-        height: 350px;
-    }
-    .content__left__block__li-active .content__left__block_btn{
-        transform: scale(2); 
-    } 
-    .content_li_active .content__left__block_btn{
-        transform: scale(2); 
-    } 
-}
-
-@media (max-width:300px){
-    .content__left__block_btns{
-        height: 300px;
-    }
-}
-@media (max-width:666px){
-  .content__left__block_btns{
-    bottom: -25%;
   }
-  .content__block {
-    flex-direction: column;
-    height: auto;
-    row-gap: 100px;
-}
-}
+
+  @media print {
+    .shtorka__left_button,.shtorka_div_button,
+    .shtorka__rght__btn,
+    .wrapper,
+    footer,
+    .b24-widget-button-wrapper,
+    .nav-,
+    footer,
+    .shtorka__header,
+    .left,
+    .glavnoe_content,
+    [data-lang="1"],
+    .do-footer,
+    .calculator__content_button,
+    [data-b24-crm-button-cont] {
+      display: none !important;
+    }
+
+    .print_screan {
+      display: block;
+    }
+
+    .calculator__otvet input {
+      border-color: var(--content);
+    }
+
+    .shtorka__left {
+      margin-top: -30px;
+    }
+
+    .shtorka__rght img,
+    .shtorka__left img {
+      /* width: 620px; */
+    }
+
+    .shtoka__info__left {
+      margin: 70px 0 0;
+      background-color: black !important;
+    }
+
+    [data-raschet-btn-ru] {
+      display: none;
+    }
+
+    .shtoka__info__right,
+    .shtoka__info__right input {
+      background-color: red !important;
+      color: black !important;
+    }
+
+    .shtoka__info__left {
+      justify-content: space-between;
+    }
+
+    .shtoka__info__right_title.c1 {
+      background: black;
+      display: block !important;
+    }
+    .shtorka__content{
+      top: 0 !important;
+      bottom: 0 !important;
+      margin: 0 !important;
+      /* padding-top: 50px !important; */
+      height: 1500px!important;
+    }
+    .shtorka__header{
+      display: none !important;
+    }
+    .shtorka__left__img{
+      border:solid 2px #000;
+      margin-left: 70px !important;
+    }
+    .shtorka__right__img{
+      margin-top: 120px !important;
+      margin-left: 70px !important;
+      
+    }
+  }
 </style>
 </html>

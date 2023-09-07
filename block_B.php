@@ -1,33 +1,29 @@
- <?php
-$dbh = new PDO('mysql:host=176.126.165.65; port=3306; dbname=user105050_planirovka_a;', 'user105050_root', 'nJ9xZ9rK2u');
-$array = [];
-$array_1 = [];
+// <?php
+//  $dbh = new PDO('mysql:host=176.126.165.65; port=3306; dbname=user105050_planirovka_a;', 'user105050_root', 'nJ9xZ9rK2u');
+// $array = [];
+//
+//  foreach($dbh->query('SELECT * from planirovka_b') as $row) {
+//  if ($query = $dbh->query("SELECT * FROM `planirovka_b`")){
+//      $array = $query->fetchAll(PDO::FETCH_ASSOC);
+//  } else{
+//      print_r ($db->errorInfo);
+//  };
+//}
+ 
 
-$curs = [];
-foreach($dbh->query('SELECT * from dollar_som') as $row) {
-      if ($query = $dbh->query("SELECT * FROM `dollar_som`")){
-          $curs = $query->fetchAll(PDO::FETCH_ASSOC);
-      } else{
-          print_r ($db->errorInfo);
-      };
+ $dbh = new PDO('mysql:host=localhost; dbname=user105050_planirovka_a;', 'root', '');
+
+
+ foreach ($dbh->query('SELECT * from planirovka_b') as $row) {
+  if ($query = $dbh->query("SELECT * FROM `planirovka_b`")) {
+     $array = $query->fetchAll(PDO::FETCH_ASSOC);
+  } else {
+     print_r($db->errorInfo);
   }
+  ;
+ }
 
-foreach($dbh->query('SELECT * from planirovka_b') as $row) {
-  if ($query = $dbh->query("SELECT * FROM `planirovka_b`")){
-      $array = $query->fetchAll(PDO::FETCH_ASSOC);
-  } else{
-      print_r ($db->errorInfo);
-  };
-}
-foreach($dbh->query('SELECT * from этажи_B/C') as $row) {
-    if ($query = $dbh->query("SELECT * FROM `этажи_B/C`")){
-        $array_1 = $query->fetchAll(PDO::FETCH_ASSOC);
-    } else{
-        print_r ($db->errorInfo);
-    };
-}
-?>    
-
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -235,13 +231,33 @@ foreach($dbh->query('SELECT * from этажи_B/C') as $row) {
                         </div>
                     </div>
                     <div class="shtorka__left_button">
-                      <div class="lang" data-ru data-lang="0">
-                        <button data-raschet-btn-ru class="deff__btn print__btn">расчет</button>
-                      </div>
-                      <div class="lang" data-kg data-lang="1">
-                        <button data-raschet-btn-ru class="deff__btn print__btn">эсептөө</button>
-                      </div>
-                    </div>
+            <div class="lang" data-ru data-lang="0">
+              <button data-raschet-btn-ru class="deff__btn print__btn">расчет</button>
+            </div>
+            <div class="lang" data-kg data-lang="1">
+              <button data-raschet-btn-ru class="deff__btn print__btn">эсептөө</button>
+            </div>
+            <!-- TELEPORT /////////////////////////// -->
+
+            <div class="lang" data-ru data-lang="0">
+              <button data-win_print="" class="deff__btn">Сохранить</button>
+            </div>
+            <div class="lang" data-kg data-lang="1">
+              <button data-win_print="" class="deff__btn">Сактоо</button>
+            </div>
+            
+            <div class="lang" data-ru data-lang="0">
+              <button class="bronirovat deff__btn " data-bron_KV>Забронировать</button>
+            </div>
+            <div class="lang" data-kg data-lang="1">
+              <button class="bronirovat deff__btn " data-bron_KV>бронь кылу</button>
+            </div>
+
+<!-- TELEPORT /////////////////////////// -->
+
+
+
+          </div>
                 </div>
                 <div class="shtorka__rght">
                   <div class="lang" data-ru data-lang="1">
@@ -251,10 +267,7 @@ foreach($dbh->query('SELECT * from этажи_B/C') as $row) {
                     <div class="shtorka__header">Батирлердин 2D макети</div>
                   </div>
                      <div class="shtorka__rght__img"><a href="#image_focus_1"><img src="" alt=""></a></div>
-                     <div class="shtorka__rght__btn">
-                      <button data-win_print class="deff__btn">печать</button>
-                         <a href="https://drive.google.com/file/d/1rAIgEHH6z9fVJ12XRchwUeWwSnpbACDb/view?usp=share_link" <button class="PDF_BTN deff__btn">скачать PDF</button> </a>
-                    </div>
+
                 </div>
             </div>
 
@@ -296,6 +309,43 @@ foreach($dbh->query('SELECT * from этажи_B/C') as $row) {
             <div class="name_page">
                 <p>Блок <span>"Б"</span></p>
             </div>
+
+            <!-- TELEPORT /////////////////////////// -->
+  <div class="form_wrapper">
+    <div class="form_wrapper__fon"></div>
+    <div class="form-container">
+        <div class="scene_1">
+            <p>Заполните поля</p>
+            <form id="dealForm"> <!-- Добавлен идентификатор "dealForm" для формы -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Имя</label> <!-- Изменен "for" и "id" для соответствия JS -->
+                    <input type="text" class="form-control name" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Телефон</label> <!-- Изменен "for" и "id" для соответствия JS -->
+                    <input type="tel" class="form-control phone" id="phone" name="phone" required>
+                </div>
+                <div class="form__button">
+                    <button type="submit" data-submit-post="" class="submit-btn btn btn-primary">Отправить</button> <!-- Заменен "type" на "submit" -->
+                    <button type="button" class="btn btn-primary form-close" data-close-form>Закрыть</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="scene_2 none">
+        <div class="close_form" data-close-form><i class="fa-solid fa-xmark" data-close-form></i></div>
+            <div class="romajon-container">
+                <svg class="romajon-svg" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path class="romajon-path" d="M 18 32.34 l -8.34 -8.34 -2.83 2.83 11.17 11.17 24 -24 -2.83 -2.83 z" stroke="#3da35a" fill="transparent"/>
+                </svg>
+            </div>
+            <span>Мы получили заявку!<br>Наши специалисты с вами свяжутся.</span>
+        </div>
+    </div>
+</div>
+
+<!-- TELEPORT /////////////////////////// -->
+
             <div class="content__block">
                 <div class="content__block__item Content__block__left">
                     <div class="lang" data-ru data-lang="0">
@@ -697,16 +747,18 @@ foreach($dbh->query('SELECT * from этажи_B/C') as $row) {
           </div>
         </footer>
       </div>
-
-    </body>
+</body>
 
     <script>
-    var curs_dollar = <?= json_encode($curs); ?>;
-
+        fetch('https://www.cbr-xml-daily.ru/daily_json.js').then(async(result) => {
+  if (result.status === 200 && result.ok) {
+      return result.json()
+  }
+  }).then((JSON_DATA) => {
+    kurs_USD = (10 / JSON_DATA.Valute.KGS.Value) * JSON_DATA.Valute.USD.Value
+    return kurs_USD
+  })
      var CV = <?= json_encode($array); ?>;
-    var CV_etaj = <?= json_encode($array_1); ?>;
-// var CV = [{"id":"1", "vznos":"30","room":"3","etaj":"1","bron":"0","sold":"0","square":"90.6","price":"1000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"2","room":"2","etaj":"1","bron":"0","sold":"1","square":"72","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"3","room":"1","etaj":"1","bron":"0","sold":"0","square":"42.92","price":"2090000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"4","room":"1","etaj":"1","bron":"0","sold":"0","square":"42.92","price":"2090000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"5","room":"2","etaj":"1","bron":"0","sold":"1","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"6","room":"2","etaj":"1","bron":"0","sold":"1","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"7","room":"1","etaj":"1","bron":"0","sold":"0","square":"46.3","price":"2250000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"8","room":"3","etaj":"2","bron":"0","sold":"1","square":"90.6","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"9","room":"2","etaj":"2","bron":"1","sold":"0","square":"72","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"10","room":"1","etaj":"2","bron":"0","sold":"0","square":"42.92","price":"2150000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"11","room":"1","etaj":"2","bron":"0","sold":"0","square":"42.92","price":"2150000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"12","room":"2","etaj":"2","bron":"0","sold":"1","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"13","room":"2","etaj":"2","bron":"0","sold":"1","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"14","room":"1","etaj":"2","bron":"0","sold":"0","square":"46.3","price":"2300000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"15","room":"3","etaj":"3","bron":"0","sold":"1","square":"90.6","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"16","room":"2","etaj":"3","bron":"0","sold":"0","square":"72","price":"3500000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"17","room":"1","etaj":"3","bron":"1","sold":"0","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"18","room":"1","etaj":"3","bron":"1","sold":"0","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"19","room":"2","etaj":"3","bron":"1","sold":"0","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"20","room":"2","etaj":"3","bron":"1","sold":"0","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"21","room":"1","etaj":"3","bron":"0","sold":"1","square":"46.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"22","room":"3","etaj":"4","bron":"0","sold":"0","square":"90.6","price":"4300000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"23","room":"1","etaj":"4","bron":"0","sold":"0","square":"72","price":"3500000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"24","room":"1","etaj":"4","bron":"0","sold":"1","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"25","room":"1","etaj":"4","bron":"0","sold":"1","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png'","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"26","room":"2","etaj":"4","bron":"0","sold":"1","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"27","room":"2","etaj":"4","bron":"0","sold":"1","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"28","room":"1","etaj":"4","bron":"0","sold":"0","square":"46.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"29","room":"3","etaj":"5","bron":"0","sold":"1","square":"90.6","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"30","room":"2","etaj":"5","bron":"0","sold":"0","square":"72","price":"3500000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"31","room":"1","etaj":"5","bron":"0","sold":"0","square":"42.92","price":"2150000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"32","room":"1","etaj":"5","bron":"0","sold":"1","square":"42.92","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"33","room":"2","etaj":"5","bron":"1","sold":"0","square":"69","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"34","room":"2","etaj":"5","bron":"0","sold":"1","square":"65.3","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"35","room":"1","etaj":"5","bron":"0","sold":"0","square":"46.3","price":"2250000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"36","room":"3","etaj":"6","bron":"1","sold":"0","square":"90.6","price":"0","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"37","room":"2","etaj":"6","bron":"0","sold":"0","square":"72","price":"3400000","image":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":".\/images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"38","room":"1","etaj":"6","bron":"0","sold":"1","square":"42.92","price":"0","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"39","room":"1","etaj":"6","bron":"0","sold":"0","square":"42.92","price":"2100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"40","room":"2","etaj":"6","bron":"0","sold":"0","square":"69","price":"3250000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"41","room":"2","etaj":"6","bron":"1","sold":"0","square":"65.3","price":"0","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"42","room":"1","etaj":"6","bron":"1","sold":"0","square":"46.3","price":"0","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"43","room":"3","etaj":"7","bron":"0","sold":"0","square":"90.6","price":"4150000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"44","room":"2","etaj":"7","bron":"0","sold":"0","square":"72","price":"3400000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"45","room":"1","etaj":"7","bron":"0","sold":"0","square":"42.92","price":"2100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"46","room":"2","etaj":"7","bron":"0","sold":"0","square":"42.92","price":"2100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"47","room":"2","etaj":"7","bron":"0","sold":"0","square":"69","price":"3250000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"48","room":"2","etaj":"7","bron":"0","sold":"0","square":"65.3","price":"3500000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"49","room":"1","etaj":"7","bron":"1","sold":"0","square":"46.3","price":"0","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"50","room":"3","etaj":"8","bron":"0","sold":"0","square":"90.6","price":"3990000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"51","room":"2","etaj":"8","bron":"0","sold":"0","square":"72","price":"3250000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"52","room":"1","etaj":"8","bron":"0","sold":"0","square":"42.92","price":"2000000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"53","room":"1","etaj":"8","bron":"0","sold":"0","square":"42.92","price":"2000000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"54","room":"2","etaj":"8","bron":"0","sold":"0","square":"69","price":"3100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"55","room":"2","etaj":"8","bron":"0","sold":"0","square":"65.3","price":"2950000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"56","room":"1","etaj":"8","bron":"0","sold":"0","square":"46.3","price":"2200000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"},{"id":"57","room":"3","etaj":"9","bron":"0","sold":"0","square":"90.6","price":"3990000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_1.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-1.png"},{"id":"58","room":"2","etaj":"9","bron":"0","sold":"0","square":"72","price":"3250000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_2.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-2.png"},{"id":"59","room":"1","etaj":"9","bron":"0","sold":"0","square":"42.92","price":"1990000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_3.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-3.png"},{"id":"60","room":"1","etaj":"9","bron":"0","sold":"0","square":"42.92","price":"1990000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_4.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-4.png"},{"id":"61","room":"2","etaj":"9","bron":"0","sold":"0","square":"69","price":"3100000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_5.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-5.png"},{"id":"62","room":"2","etaj":"9","bron":"0","sold":"0","square":"65.3","price":"2950000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_6.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-6.png"},{"id":"63","room":"1","etaj":"9","bron":"0","sold":"0","square":"46.3","price":"2200000","image":"images\/Planirovca_1\/Cvartira_A\/cvartira_7.png","image3D":"images\/Planirovca_1\/Cvartira_A\/cvartira_3d\/cvartira_3d-7.png"}];
-// var CV_etaj=[{kv}]
 
 var roma__navs = document.querySelectorAll('.roma__nav');
 roma__navs.forEach(roma__nav =>{
@@ -768,13 +820,30 @@ window.addEventListener('click', function(event){
 
         
         
-        let kurs_USD=curs_dollar[0].dollar;
-        let data_etaj=1;
-        all_data= new Date()
-        month_data= all_data.getMonth()
-        year_data= all_data.getYear()
-        let data_1 = 1
-        window.addEventListener('click', function (event) {
+let data_etaj = 1;
+ all_data = new Date()
+ month_data = all_data.getMonth()
+ year_data = all_data.getYear()
+ let data_1 = 1
+ const reserveBtn = document.querySelector('[data-bron_KV]');
+ const formContainer = document.querySelector('.form-container');
+ const closeButton = document.querySelector('.form-close');
+ const submitBtn = document.querySelector('.submit-btn');
+ const confirmationBox = document.querySelector('.confirmation-box');
+ const form_wrapper = document.querySelector('.form_wrapper')
+ 
+var name = document.querySelector('.name').value;
+var phone = document.querySelector('.phone').value;
+  
+  
+var romajonButton = document.querySelector('.romajon-button');
+var romajonContainer = document.querySelector('.romajon-container');
+var romajonCheckmark = document.querySelector('.romajon-svg');
+var romajonClassName = "animate";
+var scene_1 = document.querySelector('.scene_1');
+var scene_2 = document.querySelector('.scene_2');
+
+window.addEventListener('click', function (event) {
           if (event.target.hasAttribute('data-etaj')) {
             l=document.querySelector('.content_li_active')
             l_1=document.querySelector('.content_path_active')
@@ -864,12 +933,23 @@ window.addEventListener('click', function(event){
             document.querySelector('#image_focus_1').insertAdjacentHTML("beforeend", infoCart_2);
         }
 
-    //    калькулятор///////////////
-        calculator_input_month=document.querySelector('#info__right__block_month')
-        calculator_input_vznos=document.querySelector('.info__right__block_vzno_sum')
-        calculator_kol_vo_month=document.querySelector('.info__right__block_month')
-        data_inp_vznos=document.querySelector('.info__right__block_vzno_sum');
-        if (event.target.hasAttribute('data-raschet-btn-ru')){
+      // ***********************************************************************************************************************//
+   
+    if(event.target.hasAttribute('data-bron_KV')){
+      form_wrapper.classList.add('show');
+    }
+    if(event.target.hasAttribute('data-close-form')){
+      form_wrapper.classList.remove('show');
+    }
+      // ***********************************************************************************************************************//
+      
+      
+      //    калькулятор///////////////
+      calculator_input_month=document.querySelector('#info__right__block_month')
+      calculator_input_vznos=document.querySelector('.info__right__block_vzno_sum')
+      calculator_kol_vo_month=document.querySelector('.info__right__block_month')
+      data_inp_vznos=document.querySelector('.info__right__block_vzno_sum');
+      if (event.target.hasAttribute('data-raschet-btn-ru')){
           // data_inp_vznos.value='';
           if(data_inp_vznos.value<((CV[data_1].price*kurs_USD)*CV[data_1].square/100*(CV[data_1].vznos)-1)){
             alert('Вы ввели число меньше '+ CV[data_1].vznos+"%!!"+' Введите число больше чем '+ Math.floor((CV[data_1].price*kurs_USD)*CV[data_1].square/100*(CV[data_1].vznos))+ "сом")
@@ -879,8 +959,8 @@ window.addEventListener('click', function(event){
             alert('Вы ввели слишком много')
           }
           // if(data_inp_vznos.value){
-
-          // }
+            
+            // }
           else{
             calk_square = CV[data_1].square
             input_month = -month_data+23;
@@ -891,12 +971,90 @@ window.addEventListener('click', function(event){
             document.querySelector('#info__right__block_month').value = Math.floor(m);
           }
         }
-     });
+      });
+      
+      
+      // ***********************************************************************************************************************//
+      
+      document.getElementById('dealForm').addEventListener('submit', function(e) {
 
-   
-    const el1 = document.querySelector('.follow-cursor_1') 
-    window.addEventListener('mousemove', e => {
-        const target = e.target
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        
+        // Данные для создания контакта в Битрикс24
+        const contactData = {
+          fields: {
+            NAME: name,
+            PHONE: [{VALUE: phone, VALUE_TYPE: 'WORK'}],
+          }
+        };
+        
+        console.log(CV[data_1].room, CV[data_1].square + ' m²', Number(data_etaj) + 1);
+        // Отправка запроса на создание контакта через веб-хук
+        fetch('https://karagay.bitrix24.kz/rest/67/h82kihgg5n6x24fk/crm.contact.add', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(contactData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.result) {
+            // Контакт успешно создан, теперь создаем сделку и связываем с контактом
+        const contactId = data.result;
+        const dealData = {
+          fields: {
+            TITLE: 'Заявка на бронирование',
+            CONTACT_ID: contactId,
+            COMMENTS:`Блок: Б > Этадж: ${Number(data_etaj) + 1} > плошадь ${CV[data_1].square + ' m²'} | ${CV[data_1].room} комнаты`,
+            UF_CRM_1693401463:"Б",
+            UF_CRM_1693590597: Number(data_etaj) + 1, // Можете заполнить значениями
+            UF_CRM_1693590626: CV[data_1].room, // Можете заполнить значениями
+            UF_CRM_1693736225: CV[data_1].square + ' m²', // Можете заполнить значениями
+          }
+        };
+        
+        // Отправка запроса на создание сделки через веб-хук
+        fetch('https://karagay.bitrix24.kz/rest/67/h82kihgg5n6x24fk/crm.deal.add', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dealData)
+        })
+        .then(response => response.json())
+        .then(dealResult => {
+      
+        })
+        .catch(error => {
+          console.error('Ошибка:', error);
+        });
+      } else {
+        alert('Произошла ошибка при создании контакта.');
+      }
+    })
+.catch(error => {
+  console.error('Ошибка:', error);
+});
+
+if (!romajonCheckmark.classList.contains(romajonClassName)) {
+  romajonCheckmark.classList.add(romajonClassName);
+  scene_1.classList.add('none')
+  scene_2.classList.remove('none')
+  
+  setTimeout(function(){      
+    form_wrapper.classList.remove('show');
+  }, 7000);  
+} 
+});
+// ***********************************************************************************************************************//
+
+const el1 = document.querySelector('.follow-cursor_1') 
+window.addEventListener('mousemove', e => {
+  const target = e.target
         if (!target) return
         var data_10 = e.target.getAttribute('data-room')
         if(e.target.hasAttribute('data-room')){
@@ -938,134 +1096,113 @@ window.addEventListener('click', function(event){
      })
 </script>
 <style>
-  .print_screan{
+.print_screan {
     position: absolute;
     top: 0;
     left: 0;
     display: none;
   }
+
   @media print {
-    html, body{
+
+    /* html,
+    body {
       height: 297mm;
       width: 210mm;
+    } */
+
+    .calculator__headr {
+      margin-top: 200px;
     }
-    .calculator__headr{margin-top: 200px;}
+
     .content {
       margin-top: -100px;
     }
-    .shtorka{
-      height: 1800px!important;
+
+    .shtorka {
+      height: 1800px !important;
     }
-}   
-
-@media print {
-.shtorka_div_button, .shtorka__rght__btn, .wrapper, footer, .b24-widget-button-wrapper, .nav- , footer, .left, .glavnoe_content, [data-lang="1"],.do-footer, .calculator__content_button, [data-b24-crm-button-cont] {
-display: none!important;
-}
-.print_screan{
-display: block;
-}
-.calculator__otvet input{
-border-color: var(--content);
-}
-.shtorka__left{
-  margin-top: -30px;
-}
-.shtorka__rght img,
-.shtorka__left img{
-  width: 620px;
-}
-.shtoka__info__left {
-    margin: 70px 0 0;
-}
-[data-raschet-btn-ru]{
-  display: none;
-}
-
-
-}
-
-
-@media (max-width:800px){
-  .content__left__block_btns {
-    width: 100%;
-    left: 0;
-    left: 0;
-    margin: auto;
-    bottom: -44%;
-}
-    
-    .content__left__block_btns::after{
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        top: auto;
-        bottom: 3.5px;
-        width: 100%;
-        height: 3px;
-
+    .form_wrapper{
+      display: none;
     }
-    .content__left__block__ul{
-        width: 80%;
-        left: 0;
-        right: 0;
+  }
+
+  @media print {
+    .shtorka__left_button,.shtorka_div_button,
+    .shtorka__rght__btn,
+    .wrapper,
+    footer,
+    .b24-widget-button-wrapper,
+    .nav-,
+    footer,
+    .shtorka__header,
+    .left,
+    .glavnoe_content,
+    [data-lang="1"],
+    .do-footer,
+    .calculator__content_button,
+    [data-b24-crm-button-cont] {
+      display: none !important;
     }
 
-    .content__left__block__ul{
-        flex-direction: row;
-        height: auto;
-        margin-bottom: 0px;
+    .print_screan {
+      display: block;
     }
-    .content__left__block__li {
-        width: auto;
-        display: block;
-    }
-    .content__left__block_btn {
-        width: 10px !important;
-        height: 10px !important;
-    }
-    .content__left__block_3d{
-        z-index: 10;
-    }
-    
-}
 
-@media (max-width:450px){
-
-    .content__left__block{
-        margin-top: 0px;
+    .calculator__otvet input {
+      border-color: var(--content);
     }
-    .content__block__item__header_p{
-        font-size: 22px;
+
+    .shtorka__left {
+      margin-top: -30px;
     }
-}
 
-@media (max-width:230px){
-    .content__block__item__header_p{
-        font-size: 18px;
+    .shtorka__rght img,
+    .shtorka__left img {
+      /* width: 620px; */
     }
-    
-}
 
-
-@media (max-width:350px){
-    .content__left__block_btns{
-        height: 350px;
+    .shtoka__info__left {
+      margin: 70px 0 0;
+      background-color: black !important;
     }
-    .content__left__block__li-active .content__left__block_btn{
-        transform: scale(2); 
-    } 
-    .content_li_active .content__left__block_btn{
-        transform: scale(2); 
-    } 
-}
 
-@media (max-width:300px){
-    .content__left__block_btns{
-        height: 300px;
+    [data-raschet-btn-ru] {
+      display: none;
     }
-}
 
+    .shtoka__info__right,
+    .shtoka__info__right input {
+      background-color: red !important;
+      color: black !important;
+    }
 
+    .shtoka__info__left {
+      justify-content: space-between;
+    }
+
+    .shtoka__info__right_title.c1 {
+      background: black;
+      display: block !important;
+    }
+    .shtorka__content{
+      top: 0 !important;
+      bottom: 0 !important;
+      margin: 0 !important;
+      /* padding-top: 50px !important; */
+      height: 1500px!important;
+    }
+    .shtorka__header{
+      display: none !important;
+    }
+    .shtorka__left__img{
+      margin-left:50px !important;
+    }
+    .shtorka__right__img{
+      margin-top: 120px !important;
+      margin-left: 70px !important;
+      
+    }
+  }
 </style>
 </html>

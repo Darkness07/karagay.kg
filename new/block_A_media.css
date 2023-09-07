@@ -257,17 +257,18 @@
 
 @media (max-width:1440px) {
     .shtorka__content{
-        width: 1200px;
+        width: 100%;
+        flex-direction: column-reverse;
     }
-
-    .shtorka__left__img{
+    .shtorka__content::after{
+        display: none !important;
+    }
+    .shtorka__left, .shtorka__rght{
         width: 100%;
     }
-
-    .shtoka__info{
-        position: relative;
-        width: 900px;
-        z-index: 99;
+    .shtorka__rght__img img, .shtorka__left__img  img{
+        height: 100%;
+        width: fit-content;
     }
 }
 
@@ -282,11 +283,7 @@
     .shtorka__content{
         width: 800px;
     }
-    .shtoka__info{
-        position: relative;
-        width: 800px;
-        z-index: 99;
-    }
+
 }
 @media (max-width:800px){
     .shtorka_div {
@@ -309,7 +306,6 @@
         display: none;
     }
     .shtoka__info{
-        position: absolute;
         flex-direction: column;
         width: 100%;
         row-gap: 20px;
@@ -429,3 +425,68 @@
     }
 }
 
+
+
+.shtorka__content{
+    padding: 50px;
+    /* flex-direction: row-reverse; */
+    height: fit-content;
+  }
+  .shtorka__rght__img ,.shtorka__left__img {
+    display: flex;
+    justify-content: center;
+  }
+  .shtorka__rght__img img,.shtorka__left__img img{
+    height: 100%;
+    width: fit-content;
+  }
+.shtorka__header{
+  text-align: center;
+}
+  .shtorka__rght__btn,.shtorka__left_button{
+    position: static;
+  }
+  .shtorka__left_button{
+    margin-top: 50px;
+    gap: 15px;
+  }
+  .shtorka__left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shtoka__info{
+    width: 100% !important;
+  }
+  @media (max-width:1250px) {
+    .shtorka__content{
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+    .shtorka__content::after{
+      display: none;
+    }
+    .shtorka__left, .shtorka__rght{
+      width: 100%!important;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+  @media (max-width:800px){
+    .shtoka__info{
+      margin-top: 50px;
+      position: static;
+    }
+    .shtorka_div {
+        height: 1842px;
+    }
+  }
+  @media (max-width:500px){
+    .shtorka__rght__img img,.shtorka__left__img img{
+      width: 100%;
+      height: auto;
+    }
+  }
