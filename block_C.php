@@ -911,7 +911,7 @@ let data_etaj = 1;
             document.querySelector('.info__right__block input').value = Math.floor((CV[data_1].price*kurs_USD)*CV[data_1].square)            
             document.querySelector('.info__right__block_vzno_sum').value = Math.floor((CV[data_1].price*kurs_USD)*CV[data_1].square/100*(CV[data_1].vznos))  
                       
-            document.querySelector('#info__right__block_month').value = Math.floor(((CV[data_1].price*kurs_USD)*CV[data_1].square-((((CV[data_1].price*kurs_USD)*CV[data_1].square/100*(CV[data_1].vznos)))))/23-month_data)
+            document.querySelector('#info__right__block_month').value = Math.floor(((CV[data_1].price*kurs_USD)*CV[data_1].square-((((CV[data_1].price*kurs_USD)*CV[data_1].square/100*(CV[data_1].vznos)))))/(23-month_data))
             document.querySelector('[data-info_month]').innerHTML=info_kart;
             document.querySelector('[data-info_vzno]').innerHTML =info_kart1;
             document.querySelector('body').classList.add('body');

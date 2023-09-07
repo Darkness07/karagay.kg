@@ -1,4 +1,4 @@
-//<?php
+<?php
 //  $dbh = new PDO('mysql:host=176.126.165.65; port=3306; dbname=user105050_planirovka_a;', 'user105050_root', 'nJ9xZ9rK2u');
 //  $array = [];
 //
@@ -12,11 +12,11 @@
 //}
 //
 
-$dbh = new PDO('mysql:host=localhost; dbname=user105050_planirovka_a;', 'root', '');
+$dbh = new PDO('mysql:host=localhost; dbname=lol;', 'root', '');
 $array = [];
 
-foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
-  if ($query = $dbh->query("SELECT * FROM `planirovka_a`")) {
+foreach ($dbh->query('SELECT * from lol') as $row) {
+  if ($query = $dbh->query("SELECT * FROM `lol`")) {
     $array = $query->fetchAll(PDO::FETCH_ASSOC);
   } else {
     print_r($db->errorInfo);
@@ -969,7 +969,7 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
       document.querySelector('.info__right__block input').value = Math.floor((CV[data_1].price * kurs_USD) * CV[data_1].square)
       document.querySelector('.info__right__block_vzno_sum').value = Math.floor((CV[data_1].price * kurs_USD) * CV[data_1].square / 100 * (CV[data_1].vznos))
 
-      document.querySelector('#info__right__block_month').value = Math.floor(((CV[data_1].price * kurs_USD) * CV[data_1].square - ((((CV[data_1].price * kurs_USD) * CV[data_1].square / 100 * (CV[data_1].vznos))))) / 23 - month_data)
+      document.querySelector('#info__right__block_month').value = Math.floor(((CV[data_1].price * kurs_USD) * CV[data_1].square - ((((CV[data_1].price * kurs_USD) * CV[data_1].square / 100 * (CV[data_1].vznos))))) / (23 - month_data))
       document.querySelector('[data-info_month]').innerHTML = info_kart;
       document.querySelector('[data-info_vzno]').innerHTML = info_kart1;
       document.querySelector('body').classList.add('body');
@@ -1027,6 +1027,7 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
       else {
         calk_square = CV[data_1].square
         input_month = -month_data + 23;
+        console.log(input_month);
         p = (CV[data_1].price * kurs_USD) * CV[data_1].square;
         vznos = calculator_input_vznos.value;
         m = (p - vznos) / input_month
