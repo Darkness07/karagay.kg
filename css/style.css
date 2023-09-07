@@ -2660,3 +2660,7 @@ podInput {
 .btn:hover{
   background-color: #0c5150;
 }
+
+.shtorka_div_button {
+  box-shadow: 0 0 10px #0000005d;
+}
