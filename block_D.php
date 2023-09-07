@@ -1215,7 +1215,7 @@ if (!romajonCheckmark.classList.contains(romajonClassName)) {
     el1.style.top = e.pageY + 'px'
   })
 
-
+  
 
   CV.forEach(CVs => {
     if (CVs.bron == true) {
@@ -1239,6 +1239,9 @@ if (!romajonCheckmark.classList.contains(romajonClassName)) {
   })
 </script>
 <style>
+  .shtorka__content::after{
+    display: none;
+  }
 .print_screan {
     position: absolute;
     top: 0;
