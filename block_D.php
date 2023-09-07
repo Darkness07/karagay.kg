@@ -272,7 +272,6 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
             <div class="shtorka__header">Батирлердин 2D макети</div>
           </div>
           <div class="shtorka__rght__img"><a href="#image_focus_1"><img src="" alt=""></a></div>
-
         </div>
       </div>
 
@@ -1239,8 +1238,38 @@ if (!romajonCheckmark.classList.contains(romajonClassName)) {
   })
 </script>
 <style>
-  .shtorka__content::after{
-    display: none;
+  @media (min-width:1450px) {
+
+  .shtorka__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: initial;
+  }
+  .shtorka__left__img{
+    height: 0px;
+  }
+  .shtorka__left_button{
+    left: auto;
+    column-gap: 20px;
+  }
+}
+.shtorka__content::after{
+  display: none;
+}
+@media (max-width:800px) {
+  
+  .shtorka__left__img{
+    height: 0px;
+  }
+  .shtorka__content {
+    height: 950px;
+    justify-content: flex-end;
+  }
+  .shtorka__left_button{
+    left: auto;
+
+}
   }
 .print_screan {
     position: absolute;
@@ -1248,6 +1277,7 @@ if (!romajonCheckmark.classList.contains(romajonClassName)) {
     left: 0;
     display: none;
   }
+
 
   @media print {
 
