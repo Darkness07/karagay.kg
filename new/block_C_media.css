@@ -37,10 +37,7 @@
         margin: auto 0;
     }
 
-    .content__left__block_3d__svg {
-        width: 500px;
-        height: 500px;
-    }
+
 
     .content__right__block {
         align-items: flex-start;
@@ -95,10 +92,7 @@
         width: 700px;
     }
 
-    .content__left__block_3d__svg {
-        width: 700px;
-        height: 700px;
-    }
+ 
 
     .content__left__block_3d {
         height: auto;
@@ -289,9 +283,9 @@
         z-index: 99;
     }
 
-    .Planirovca svg {
+    /* .Planirovca svg {
         top: -72px;
-    }
+    } */
 }
 
 
