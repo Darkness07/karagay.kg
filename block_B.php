@@ -1,4 +1,4 @@
-// <?php
+<?php
 //  $dbh = new PDO('mysql:host=176.126.165.65; port=3306; dbname=user105050_planirovka_a;', 'user105050_root', 'nJ9xZ9rK2u');
 // $array = [];
 //
@@ -11,11 +11,11 @@
 //}
  
 
- $dbh = new PDO('mysql:host=localhost; dbname=user105050_planirovka_a;', 'root', '');
+ $dbh = new PDO('mysql:host=localhost; dbname=lol;', 'root', '');
 
 
- foreach ($dbh->query('SELECT * from planirovka_b') as $row) {
-  if ($query = $dbh->query("SELECT * FROM `planirovka_b`")) {
+ foreach ($dbh->query('SELECT * from lol') as $row) {
+  if ($query = $dbh->query("SELECT * FROM `lol`")) {
      $array = $query->fetchAll(PDO::FETCH_ASSOC);
   } else {
      print_r($db->errorInfo);

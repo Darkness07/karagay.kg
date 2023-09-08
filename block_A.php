@@ -73,7 +73,7 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
 </head>
 
 <body>
-   
+
   <div id="image_focus">
     <div class="none_js">
       <a class="close" href="#ll" id="button_a">
@@ -244,7 +244,7 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
             <div class="lang" data-kg data-lang="1">
               <button data-raschet-btn-ru class="deff__btn print__btn">эсептөө</button>
             </div>
-<!-- TELEPORT /////////////////////////// -->
+            <!-- TELEPORT /////////////////////////// -->
 
             <div class="lang" data-ru data-lang="0">
               <button data-win_print="" class="deff__btn">Сохранить</button>
@@ -252,7 +252,7 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
             <div class="lang" data-kg data-lang="1">
               <button data-win_print="" class="deff__btn">Сактоо</button>
             </div>
-            
+
             <div class="lang" data-ru data-lang="0">
               <button class="bronirovat deff__btn " data-bron_KV>Забронировать</button>
             </div>
@@ -260,7 +260,7 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
               <button class="bronirovat deff__btn " data-bron_KV>бронь кылу</button>
             </div>
 
-<!-- TELEPORT /////////////////////////// -->
+            <!-- TELEPORT /////////////////////////// -->
 
           </div>
         </div>
@@ -316,41 +316,43 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
         <p>Блок <span>"A"</span></p>
       </div>
 
-<!-- TELEPORT /////////////////////////// -->
-  <div class="form_wrapper">
-    <div class="form_wrapper__fon"></div>
-    <div class="form-container">
-        <div class="scene_1">
+      <!-- TELEPORT /////////////////////////// -->
+      <div class="form_wrapper">
+        <div class="form_wrapper__fon"></div>
+        <div class="form-container">
+          <div class="scene_1">
             <p>Заполните поля</p>
             <form id="dealForm"> <!-- Добавлен идентификатор "dealForm" для формы -->
-                <div class="mb-3">
-                    <label for="name" class="form-label">Имя</label> <!-- Изменен "for" и "id" для соответствия JS -->
-                    <input type="text" class="form-control name" id="name" name="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Телефон</label> <!-- Изменен "for" и "id" для соответствия JS -->
-                    <input type="tel" class="form-control phone" id="phone" name="phone" required>
-                </div>
-                <div class="form__button">
-                    <button type="submit" data-submit-post="" class="submit-btn btn btn-primary">Отправить</button> <!-- Заменен "type" на "submit" -->
-                    <button type="button" class="btn btn-primary form-close" data-close-form>Закрыть</button>
-                </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Имя</label> <!-- Изменен "for" и "id" для соответствия JS -->
+                <input type="text" class="form-control name" id="name" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Телефон</label> <!-- Изменен "for" и "id" для соответствия JS -->
+                <input type="tel" class="form-control phone" id="phone" name="phone" required>
+              </div>
+              <div class="form__button">
+                <button type="submit" data-submit-post="" class="submit-btn btn btn-primary">Отправить</button>
+                <!-- Заменен "type" на "submit" -->
+                <button type="button" class="btn btn-primary form-close" data-close-form>Закрыть</button>
+              </div>
             </form>
-        </div>
+          </div>
 
-        <div class="scene_2 none">
-        <div class="close_form" data-close-form><i class="fa-solid fa-xmark" data-close-form></i></div>
+          <div class="scene_2 none">
+            <div class="close_form" data-close-form><i class="fa-solid fa-xmark" data-close-form></i></div>
             <div class="romajon-container">
-                <svg class="romajon-svg" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <path class="romajon-path" d="M 18 32.34 l -8.34 -8.34 -2.83 2.83 11.17 11.17 24 -24 -2.83 -2.83 z" stroke="#3da35a" fill="transparent"/>
-                </svg>
+              <svg class="romajon-svg" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path class="romajon-path" d="M 18 32.34 l -8.34 -8.34 -2.83 2.83 11.17 11.17 24 -24 -2.83 -2.83 z"
+                  stroke="#3da35a" fill="transparent" />
+              </svg>
             </div>
             <span>Мы получили заявку!<br>Наши специалисты с вами свяжутся.</span>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-<!-- TELEPORT /////////////////////////// -->
+      <!-- TELEPORT /////////////////////////// -->
 
       <div class="content__block">
         <div class="content__block__item Content__block__left">
@@ -451,9 +453,9 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
               <p class="content__block__item__header_p">Баатир тандоо</p>
             </div>
           </div>
-   
+
           <div class="content__right__block">
-            
+
             <section class="Planirovca">
               <img src="./images/Planirovca_1/Planirovca_color_A_NEW.png" alt="">
 
@@ -806,7 +808,7 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
 
 </body>
 
- <script>
+<script>
   fetch('https://www.cbr-xml-daily.ru/daily_json.js').then(async (result) => {
     if (result.status === 200 && result.ok) {
       return result.json()
@@ -889,17 +891,17 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
   const submitBtn = document.querySelector('.submit-btn');
   const confirmationBox = document.querySelector('.confirmation-box');
   const form_wrapper = document.querySelector('.form_wrapper')
-  
+
   var name = document.querySelector('.name').value;
   var phone = document.querySelector('.phone').value;
-  
-  
-      var romajonButton = document.querySelector('.romajon-button');
-      var romajonContainer = document.querySelector('.romajon-container');
-      var romajonCheckmark = document.querySelector('.romajon-svg');
-      var romajonClassName = "animate";
-      var scene_1 = document.querySelector('.scene_1');
-      var scene_2 = document.querySelector('.scene_2');
+
+
+  var romajonButton = document.querySelector('.romajon-button');
+  var romajonContainer = document.querySelector('.romajon-container');
+  var romajonCheckmark = document.querySelector('.romajon-svg');
+  var romajonClassName = "animate";
+  var scene_1 = document.querySelector('.scene_1');
+  var scene_2 = document.querySelector('.scene_2');
 
 
   window.addEventListener('click', function (event) {
@@ -953,7 +955,7 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
       const info_kart1 = `
           <div class="lang" data-ru data-lang="0">перв.взн</div><div class="lang" data-kg data-lang="1">башкы төлөм</div>${'&nbsp' + CV[data_1].vznos + '%'}
           `
-          
+
       window.scrollTo(0, 0)
       const infoCart = `<img src="${CV[data_1].image3D}" alt="">`
       const infoCart1 = `<img src="${CV[data_1].image}" alt="">`
@@ -994,16 +996,17 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
     }
 
 
-  
-      // ***********************************************************************************************************************//
-   
-    if(event.target.hasAttribute('data-bron_KV')){
+
+    // ***********************************************************************************************************************//
+
+    if (event.target.hasAttribute('data-bron_KV')) {
       form_wrapper.classList.add('show');
     }
-    if(event.target.hasAttribute('data-close-form')){
+    if (event.target.hasAttribute('data-close-form')) {
       form_wrapper.classList.remove('show');
     }
-      // ***********************************************************************************************************************//
+
+    // ***********************************************************************************************************************//
 
 
 
@@ -1036,84 +1039,84 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
       }
     }
   });
-  
 
 
-        document.getElementById('dealForm').addEventListener('submit', function(e) {
 
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        
-        // Данные для создания контакта в Битрикс24
-        const contactData = {
+  document.getElementById('dealForm').addEventListener('submit', function (e) {
+
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+
+    // Данные для создания контакта в Битрикс24
+    const contactData = {
+      fields: {
+        NAME: name,
+        PHONE: [{ VALUE: phone, VALUE_TYPE: 'WORK' }],
+      }
+    };
+
+    console.log(CV[data_1].room, CV[data_1].square + ' m²', Number(data_etaj) + 1);
+    // Отправка запроса на создание контакта через веб-хук
+    fetch('https://karagay.bitrix24.kz/rest/67/h82kihgg5n6x24fk/crm.contact.add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(contactData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.result) {
+          // Контакт успешно создан, теперь создаем сделку и связываем с контактом
+          const contactId = data.result;
+          const dealData = {
             fields: {
-                NAME: name,
-                PHONE: [{VALUE: phone, VALUE_TYPE: 'WORK'}],
-              }
-            };
-        
-            console.log(CV[data_1].room, CV[data_1].square + ' m²', Number(data_etaj) + 1);
-            // Отправка запроса на создание контакта через веб-хук
-            fetch('https://karagay.bitrix24.kz/rest/67/h82kihgg5n6x24fk/crm.contact.add', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(contactData)
-            })
-            .then(response => response.json())
-            .then(data => {
-              if (data.result) {
-                // Контакт успешно создан, теперь создаем сделку и связываем с контактом
-                const contactId = data.result;
-                const dealData = {
-                  fields: {
-                    TITLE: 'Заявка на бронирование',
-                    CONTACT_ID: contactId,
-                    COMMENTS:`Блок: А > Этаж: ${Number(data_etaj) + 1} > площадь ${CV[data_1].square + ' m²'} | ${CV[data_1].room} комнатный`,
-                    UF_CRM_1694066987:"A",
-                    UF_CRM_1694067060: Number(data_etaj) + 1, // Можете заполнить значениями
-                    UF_CRM_1694067167: CV[data_1].room, // Можете заполнить значениями
-                    UF_CRM_1694067196: CV[data_1].square + ' m²', // Можете заполнить значениями
-                    }
-                };
-                
-                // Отправка запроса на создание сделки через веб-хук
-                fetch('https://karagay.bitrix24.kz/rest/67/h82kihgg5n6x24fk/crm.deal.add', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(dealData)
-                })
-                .then(response => response.json())
-                .then(dealResult => {
-              
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                });
-            } else {
-                alert('Произошла ошибка при создании контакта.');
+              TITLE: 'Заявка на бронирование',
+              CONTACT_ID: contactId,
+              COMMENTS: `Блок: А > Этаж: ${Number(data_etaj) + 1} > площадь ${CV[data_1].square + ' m²'} | ${CV[data_1].room} комнатный`,
+              UF_CRM_1694066987: "A",
+              UF_CRM_1694067060: Number(data_etaj) + 1, // Можете заполнить значениями
+              UF_CRM_1694067167: CV[data_1].room, // Можете заполнить значениями
+              UF_CRM_1694067196: CV[data_1].square + ' m²', // Можете заполнить значениями
             }
-        })
-        .catch(error => {
-            console.error('Ошибка:', error);
-        });
+          };
 
-        if (!romajonCheckmark.classList.contains(romajonClassName)) {
-          romajonCheckmark.classList.add(romajonClassName);
-             scene_1.classList.add('none')
-             scene_2.classList.remove('none')
-    
-              setTimeout(function(){      
-                form_wrapper.classList.remove('show');
-              }, 7000);  
-           } 
+          // Отправка запроса на создание сделки через веб-хук
+          fetch('https://karagay.bitrix24.kz/rest/67/h82kihgg5n6x24fk/crm.deal.add', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dealData)
+          })
+            .then(response => response.json())
+            .then(dealResult => {
+
+            })
+            .catch(error => {
+              console.error('Ошибка:', error);
+            });
+        } else {
+          alert('Произошла ошибка при создании контакта.');
+        }
+      })
+      .catch(error => {
+        console.error('Ошибка:', error);
       });
-      
+
+    if (!romajonCheckmark.classList.contains(romajonClassName)) {
+      romajonCheckmark.classList.add(romajonClassName);
+      scene_1.classList.add('none')
+      scene_2.classList.remove('none')
+
+      setTimeout(function () {
+        form_wrapper.classList.remove('show');
+      }, 7000);
+    }
+  });
+
 
 
 
@@ -1162,9 +1165,9 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
 
 
 
-</script> 
+</script>
 <style>
-.print_screan {
+  .print_screan {
     position: absolute;
     top: 0;
     left: 0;
@@ -1190,13 +1193,16 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
     .shtorka {
       height: 1800px !important;
     }
-    .form_wrapper{
+
+    .form_wrapper {
       display: none;
     }
   }
 
   @media print {
-    .shtorka__left_button,.shtorka_div_button,
+
+    .shtorka__left_button,
+    .shtorka_div_button,
     .shtorka__rght__btn,
     .wrapper,
     footer,
@@ -1253,24 +1259,28 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
       background: black;
       display: block !important;
     }
-    .shtorka__content{
+
+    .shtorka__content {
       top: 0 !important;
       bottom: 0 !important;
       margin: 0 !important;
       /* padding-top: 50px !important; */
-      height: 1500px!important;
+      height: 1500px !important;
     }
-    .shtorka__header{
+
+    .shtorka__header {
       display: none !important;
     }
-    .shtorka__left__img{
-      border:solid 2px #000;
+
+    .shtorka__left__img {
+      border: solid 2px #000;
       margin-left: 50px !important;
     }
-    .shtorka__right__img{
+
+    .shtorka__right__img {
       margin-top: 120px !important;
       margin-left: 70px !important;
-      
+
     }
   }
 </style>
