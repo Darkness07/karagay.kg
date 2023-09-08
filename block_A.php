@@ -166,6 +166,8 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
   </div>
 
   <div class="shtorka">
+    <div class="div_put">A-блок/ <span class="etaj">1-этаж</span>/ <span class='square'></span>м²</div>
+
     <div class="shtorka_div">
       <div class="lang" data-ru data-lang="0">
         <button class="shtorka_div_button deff__btn" data-shtorka-x><i class="fa-solid fa-arrow-left-long"></i>
@@ -970,6 +972,8 @@ foreach ($dbh->query('SELECT * from lol') as $row) {
       $('.shtoka__info__left__li_price').html(Math.floor(CV[data_1].price) + ' $')
       document.querySelector('.info__right__block input').value = Math.floor((CV[data_1].price * kurs_USD) * CV[data_1].square)
       document.querySelector('.info__right__block_vzno_sum').value = Math.floor((CV[data_1].price * kurs_USD) * CV[data_1].square / 100 * (CV[data_1].vznos))
+      document.querySelector('.div_put>.etaj').innerHTML=`${+data_etaj +1} этаж`
+            document.querySelector('.div_put>.square').innerHTML=`${CV[data_1].square }`
 
       document.querySelector('#info__right__block_month').value = Math.floor(((CV[data_1].price * kurs_USD) * CV[data_1].square - ((((CV[data_1].price * kurs_USD) * CV[data_1].square / 100 * (CV[data_1].vznos))))) / (23 - month_data))
       document.querySelector('[data-info_month]').innerHTML = info_kart;

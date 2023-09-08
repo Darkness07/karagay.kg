@@ -1,4 +1,5 @@
-//<?php
+//
+<?php
 //  $dbh = new PDO('mysql:host=176.126.165.65; port=3306; dbname=user105050_planirovka_a;', 'user105050_root', 'nJ9xZ9rK2u');
 //  $array = [];
 //
@@ -14,11 +15,11 @@
 
 
 
-$dbh = new PDO('mysql:host=localhost; dbname=user105050_planirovka_a;', 'root', '');
+$dbh = new PDO('mysql:host=localhost; dbname=lol;', 'root', '');
 $array = [];
 
-foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
-  if ($query = $dbh->query("SELECT * FROM `planirovka_a`")) {
+foreach ($dbh->query('SELECT * from lol') as $row) {
+  if ($query = $dbh->query("SELECT * FROM `lol`")) {
     $array = $query->fetchAll(PDO::FETCH_ASSOC);
   } else {
     print_r($db->errorInfo);
@@ -166,6 +167,8 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
   </div>
 
   <div class="shtorka">
+    <div class="div_put">Г-блок/ <span class="etaj">1-этаж</span>/ <span class='square'></span>м²</div>
+
     <div class="shtorka_div">
       <div class="lang" data-ru data-lang="0">
         <button class="shtorka_div_button deff__btn" data-shtorka-x><i class="fa-solid fa-arrow-left-long"></i>
@@ -243,15 +246,15 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
             <div class="lang" data-kg data-lang="1">
               <button data-raschet-btn-ru class="deff__btn print__btn">эсептөө</button>
             </div>
-<!-- TELEPORT /////////////////////////// -->
+            <!-- TELEPORT /////////////////////////// -->
 
-<div class="lang" data-ru data-lang="0">
+            <div class="lang" data-ru data-lang="0">
               <button data-win_print="" class="deff__btn">Сохранить</button>
             </div>
             <div class="lang" data-kg data-lang="1">
               <button data-win_print="" class="deff__btn">Сактоо</button>
             </div>
-            
+
             <div class="lang" data-ru data-lang="0">
               <button class="bronirovat deff__btn " data-bron_KV>Забронировать</button>
             </div>
@@ -259,7 +262,7 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
               <button class="bronirovat deff__btn " data-bron_KV>бронь кылу</button>
             </div>
 
-<!-- TELEPORT /////////////////////////// -->
+            <!-- TELEPORT /////////////////////////// -->
 
 
           </div>
@@ -314,42 +317,44 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
       <div class="name_page">
         <p>Блок <span>"Г"</span></p>
       </div>
-      
-<!-- TELEPORT /////////////////////////// -->
-  <div class="form_wrapper">
-    <div class="form_wrapper__fon"></div>
-    <div class="form-container">
-        <div class="scene_1">
+
+      <!-- TELEPORT /////////////////////////// -->
+      <div class="form_wrapper">
+        <div class="form_wrapper__fon"></div>
+        <div class="form-container">
+          <div class="scene_1">
             <p>Заполните поля</p>
             <form id="dealForm"> <!-- Добавлен идентификатор "dealForm" для формы -->
-                <div class="mb-3">
-                    <label for="name" class="form-label">Имя</label> <!-- Изменен "for" и "id" для соответствия JS -->
-                    <input type="text" class="form-control name" id="name" name="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Телефон</label> <!-- Изменен "for" и "id" для соответствия JS -->
-                    <input type="tel" class="form-control phone" id="phone" name="phone" required>
-                </div>
-                <div class="form__button">
-                    <button type="submit" data-submit-post="" class="submit-btn btn btn-primary">Отправить</button> <!-- Заменен "type" на "submit" -->
-                    <button type="button" class="btn btn-primary form-close" data-close-form>Закрыть</button>
-                </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Имя</label> <!-- Изменен "for" и "id" для соответствия JS -->
+                <input type="text" class="form-control name" id="name" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Телефон</label> <!-- Изменен "for" и "id" для соответствия JS -->
+                <input type="tel" class="form-control phone" id="phone" name="phone" required>
+              </div>
+              <div class="form__button">
+                <button type="submit" data-submit-post="" class="submit-btn btn btn-primary">Отправить</button>
+                <!-- Заменен "type" на "submit" -->
+                <button type="button" class="btn btn-primary form-close" data-close-form>Закрыть</button>
+              </div>
             </form>
-        </div>
+          </div>
 
-        <div class="scene_2 none">
-        <div class="close_form" data-close-form><i class="fa-solid fa-xmark" data-close-form></i></div>
+          <div class="scene_2 none">
+            <div class="close_form" data-close-form><i class="fa-solid fa-xmark" data-close-form></i></div>
             <div class="romajon-container">
-                <svg class="romajon-svg" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                    <path class="romajon-path" d="M 18 32.34 l -8.34 -8.34 -2.83 2.83 11.17 11.17 24 -24 -2.83 -2.83 z" stroke="#3da35a" fill="transparent"/>
-                </svg>
+              <svg class="romajon-svg" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                <path class="romajon-path" d="M 18 32.34 l -8.34 -8.34 -2.83 2.83 11.17 11.17 24 -24 -2.83 -2.83 z"
+                  stroke="#3da35a" fill="transparent" />
+              </svg>
             </div>
             <span>Мы получили заявку!<br>Наши специалисты с вами свяжутся.</span>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-<!-- TELEPORT /////////////////////////// -->
+      <!-- TELEPORT /////////////////////////// -->
 
       <div class="content__block">
         <div class="content__block__item Content__block__left">
@@ -974,17 +979,17 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
   const submitBtn = document.querySelector('.submit-btn');
   const confirmationBox = document.querySelector('.confirmation-box');
   const form_wrapper = document.querySelector('.form_wrapper')
-  
+
   var name = document.querySelector('.name').value;
   var phone = document.querySelector('.phone').value;
-  
-  
-      var romajonButton = document.querySelector('.romajon-button');
-      var romajonContainer = document.querySelector('.romajon-container');
-      var romajonCheckmark = document.querySelector('.romajon-svg');
-      var romajonClassName = "animate";
-      var scene_1 = document.querySelector('.scene_1');
-      var scene_2 = document.querySelector('.scene_2');
+
+
+  var romajonButton = document.querySelector('.romajon-button');
+  var romajonContainer = document.querySelector('.romajon-container');
+  var romajonCheckmark = document.querySelector('.romajon-svg');
+  var romajonClassName = "animate";
+  var scene_1 = document.querySelector('.scene_1');
+  var scene_2 = document.querySelector('.scene_2');
 
   window.addEventListener('click', function (event) {
     if (event.target.hasAttribute('data-etaj')) {
@@ -1053,6 +1058,8 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
       $('.shtoka__info__left__li_price').html(Math.floor(CV[data_1].price) + ' $')
       document.querySelector('.info__right__block input').value = Math.floor((CV[data_1].price * kurs_USD) * CV[data_1].square)
       document.querySelector('.info__right__block_vzno_sum').value = Math.floor((CV[data_1].price * kurs_USD) * CV[data_1].square / 100 * (CV[data_1].vznos))
+      document.querySelector('.div_put>.etaj').innerHTML=`${+data_etaj +1} этаж`
+            document.querySelector('.div_put>.square').innerHTML=`${CV[data_1].square }`
 
       document.querySelector('#info__right__block_month').value = Math.floor(((CV[data_1].price * kurs_USD) * CV[data_1].square - ((((CV[data_1].price * kurs_USD) * CV[data_1].square / 100 * (CV[data_1].vznos))))) / (23 - month_data))
       document.querySelector('[data-info_month]').innerHTML = info_kart;
@@ -1079,14 +1086,14 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
     }
 
     // ***********************************************************************************************************************//
-   
-    if(event.target.hasAttribute('data-bron_KV')){
+
+    if (event.target.hasAttribute('data-bron_KV')) {
       form_wrapper.classList.add('show');
     }
-    if(event.target.hasAttribute('data-close-form')){
+    if (event.target.hasAttribute('data-close-form')) {
       form_wrapper.classList.remove('show');
     }
-      // ***********************************************************************************************************************//
+    // ***********************************************************************************************************************//
 
 
     //    калькулятор///////////////
@@ -1118,18 +1125,18 @@ foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
     }
   });
 
-  document.getElementById('dealForm').addEventListener('submit', function(e) {
+  document.getElementById('dealForm').addEventListener('submit', function (e) {
 
-e.preventDefault();
+    e.preventDefault();
 
-const name = document.getElementById('name').value;
-const phone = document.getElementById('phone').value;
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
 
-// Данные для создания контакта в Битрикс24
-const contactData = {
-    fields: {
+    // Данные для создания контакта в Битрикс24
+    const contactData = {
+      fields: {
         NAME: name,
-        PHONE: [{VALUE: phone, VALUE_TYPE: 'WORK'}],
+        PHONE: [{ VALUE: phone, VALUE_TYPE: 'WORK' }],
       }
     };
 
@@ -1142,56 +1149,56 @@ const contactData = {
       },
       body: JSON.stringify(contactData)
     })
-    .then(response => response.json())
-    .then(data => {
-      if (data.result) {
-        // Контакт успешно создан, теперь создаем сделку и связываем с контактом
-        const contactId = data.result;
-        const dealData = {
-          fields: {
-            TITLE: 'Заявка на бронирование',
-            CONTACT_ID: contactId,
-            COMMENTS:`Блок: Г > Этадж: ${Number(data_etaj) + 1} > плошадь ${CV[data_1].square + ' m²'} | ${CV[data_1].room} комнаты`,
-            UF_CRM_1693401463:"A",
-            UF_CRM_1693590597: Number(data_etaj) + 1, // Можете заполнить значениями
-        UF_CRM_1693590626: CV[data_1].room, // Можете заполнить значениями
-        UF_CRM_1693736225: CV[data_1].square + ' m²', // Можете заполнить значениями
+      .then(response => response.json())
+      .then(data => {
+        if (data.result) {
+          // Контакт успешно создан, теперь создаем сделку и связываем с контактом
+          const contactId = data.result;
+          const dealData = {
+            fields: {
+              TITLE: 'Заявка на бронирование',
+              CONTACT_ID: contactId,
+              COMMENTS: `Блок: Г > Этадж: ${Number(data_etaj) + 1} > плошадь ${CV[data_1].square + ' m²'} | ${CV[data_1].room} комнаты`,
+              UF_CRM_1693401463: "A",
+              UF_CRM_1693590597: Number(data_etaj) + 1, // Можете заполнить значениями
+              UF_CRM_1693590626: CV[data_1].room, // Можете заполнить значениями
+              UF_CRM_1693736225: CV[data_1].square + ' m²', // Можете заполнить значениями
             }
-        };
-        
-        // Отправка запроса на создание сделки через веб-хук
-        fetch('https://karagay.bitrix24.kz/rest/67/w6wdjmh0srod9jsi/crm.deal.add', {
+          };
+
+          // Отправка запроса на создание сделки через веб-хук
+          fetch('https://karagay.bitrix24.kz/rest/67/w6wdjmh0srod9jsi/crm.deal.add', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify(dealData)
-        })
-        .then(response => response.json())
-        .then(dealResult => {
-      
-        })
-        .catch(error => {
-            console.error('Ошибка:', error);
-        });
-    } else {
-        alert('Произошла ошибка при создании контакта.');
-    }
-})
-.catch(error => {
-    console.error('Ошибка:', error);
-});
+          })
+            .then(response => response.json())
+            .then(dealResult => {
 
-if (!romajonCheckmark.classList.contains(romajonClassName)) {
-  romajonCheckmark.classList.add(romajonClassName);
-     scene_1.classList.add('none')
-     scene_2.classList.remove('none')
+            })
+            .catch(error => {
+              console.error('Ошибка:', error);
+            });
+        } else {
+          alert('Произошла ошибка при создании контакта.');
+        }
+      })
+      .catch(error => {
+        console.error('Ошибка:', error);
+      });
 
-      setTimeout(function(){      
+    if (!romajonCheckmark.classList.contains(romajonClassName)) {
+      romajonCheckmark.classList.add(romajonClassName);
+      scene_1.classList.add('none')
+      scene_2.classList.remove('none')
+
+      setTimeout(function () {
         form_wrapper.classList.remove('show');
-      }, 7000);  
-   } 
-});
+      }, 7000);
+    }
+  });
 
 
 
@@ -1239,7 +1246,7 @@ if (!romajonCheckmark.classList.contains(romajonClassName)) {
   })
 </script>
 <style>
-.print_screan {
+  .print_screan {
     position: absolute;
     top: 0;
     left: 0;
@@ -1265,13 +1272,16 @@ if (!romajonCheckmark.classList.contains(romajonClassName)) {
     .shtorka {
       height: 1800px !important;
     }
-    .form_wrapper{
+
+    .form_wrapper {
       display: none;
     }
   }
 
   @media print {
-    .shtorka__left_button,.shtorka_div_button,
+
+    .shtorka__left_button,
+    .shtorka_div_button,
     .shtorka__rght__btn,
     .wrapper,
     footer,
@@ -1328,24 +1338,28 @@ if (!romajonCheckmark.classList.contains(romajonClassName)) {
       background: black;
       display: block !important;
     }
-    .shtorka__content{
+
+    .shtorka__content {
       top: 0 !important;
       bottom: 0 !important;
       margin: 0 !important;
       /* padding-top: 50px !important; */
-      height: 1500px!important;
+      height: 1500px !important;
     }
-    .shtorka__header{
+
+    .shtorka__header {
       display: none !important;
     }
-    .shtorka__left__img{
-      border:solid 2px #000;
+
+    .shtorka__left__img {
+      border: solid 2px #000;
       margin-left: 70px !important;
     }
-    .shtorka__right__img{
+
+    .shtorka__right__img {
       margin-top: 120px !important;
       margin-left: 70px !important;
-      
+
     }
   }
 </style>

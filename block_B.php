@@ -9,21 +9,21 @@
 //      print_r ($db->errorInfo);
 //  };
 //}
- 
-
- $dbh = new PDO('mysql:host=localhost; dbname=lol;', 'root', '');
 
 
- foreach ($dbh->query('SELECT * from lol') as $row) {
+$dbh = new PDO('mysql:host=localhost; dbname=lol;', 'root', '');
+
+
+foreach ($dbh->query('SELECT * from lol') as $row) {
   if ($query = $dbh->query("SELECT * FROM `lol`")) {
-     $array = $query->fetchAll(PDO::FETCH_ASSOC);
+    $array = $query->fetchAll(PDO::FETCH_ASSOC);
   } else {
-     print_r($db->errorInfo);
+    print_r($db->errorInfo);
   }
   ;
- }
+}
 
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -162,7 +162,8 @@
       </div>
   
     <div class="shtorka">
-        <div class="shtorka_div">
+        <div class="div_put">Б-блок/ <span class="etaj">1-этаж</span>/ <span class='square'></span>м²</div>
+    <div class="shtorka_div">
           <div class="lang" data-ru data-lang="0">
             <button class="shtorka_div_button deff__btn" data-shtorka-x><i class="fa-solid fa-arrow-left-long"></i> назад</button>
           </div>
@@ -820,7 +821,7 @@ window.addEventListener('click', function(event){
 
         
         
-let data_etaj = 1;
+let data_etaj = 0;
  all_data = new Date()
  month_data = all_data.getMonth()
  year_data = all_data.getYear()
@@ -903,6 +904,9 @@ window.addEventListener('click', function (event) {
             document.querySelector('.shtorka__rght__img a').insertAdjacentHTML("beforeend", infoCart1);
             $('.shtorka').css('display','block')
             $('.shtoka__info__left__li_etag').html(Number(data_etaj)+1)
+
+            document.querySelector('.div_put>.etaj').innerHTML=`${+data_etaj +1} этаж`
+            document.querySelector('.div_put>.square').innerHTML=`${CV[data_1].square }`
             $('.shtoka__info__left__li_room').html(CV[data_1].room)
             $('.shtoka__info__left__li_scale').html(CV[data_1].square+' m²')
             $('.shtoka__info__left__li_price').html(Math.floor(CV[data_1].price)+' $')
@@ -910,6 +914,7 @@ window.addEventListener('click', function (event) {
             document.querySelector('.info__right__block_vzno_sum').value = Math.floor((CV[data_1].price*kurs_USD)*CV[data_1].square/100*(CV[data_1].vznos))  
                       
             document.querySelector('#info__right__block_month').value = Math.floor(((CV[data_1].price*kurs_USD)*CV[data_1].square-((((CV[data_1].price*kurs_USD)*CV[data_1].square/100*(CV[data_1].vznos)))))/(23-month_data))
+            
             document.querySelector('[data-info_month]').innerHTML=info_kart;
             document.querySelector('[data-info_vzno]').innerHTML =info_kart1;
             document.querySelector('body').classList.add('body');

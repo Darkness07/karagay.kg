@@ -11,20 +11,20 @@
  //  }
  //  ;
  //}
-
-
- $dbh = new PDO('mysql:host=localhost; dbname=user105050_planirovka_a;', 'root', '');
  
 
- foreach ($dbh->query('SELECT * from planirovka_a') as $row) {
-  if ($query = $dbh->query("SELECT * FROM `planirovka_a`")) {
-    $array = $query->fetchAll(PDO::FETCH_ASSOC);
-  } else {
-    print_r($db->errorInfo);
-  }
-  ;
-}
- 
+ $dbh = new PDO('mysql:host=localhost; dbname=lol;', 'root', '');
+
+
+ foreach ($dbh->query('SELECT * from lol') as $row) {
+   if ($query = $dbh->query("SELECT * FROM `lol`")) {
+     $array = $query->fetchAll(PDO::FETCH_ASSOC);
+   } else {
+     print_r($db->errorInfo);
+   }
+   ;
+ }
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -164,6 +164,8 @@
       </div>
   
     <div class="shtorka">
+    <div class="div_put">В-блок/ <span class="etaj">1-этаж</span>/ <span class='square'></span>м²</div>
+
         <div class="shtorka_div">
           <div class="lang" data-ru data-lang="0">
             <button class="shtorka_div_button deff__btn" data-shtorka-x><i class="fa-solid fa-arrow-left-long"></i> назад</button>
@@ -910,8 +912,11 @@ let data_etaj = 1;
             $('.shtoka__info__left__li_price').html(Math.floor(CV[data_1].price)+' $')
             document.querySelector('.info__right__block input').value = Math.floor((CV[data_1].price*kurs_USD)*CV[data_1].square)            
             document.querySelector('.info__right__block_vzno_sum').value = Math.floor((CV[data_1].price*kurs_USD)*CV[data_1].square/100*(CV[data_1].vznos))  
-                      
+            document.querySelector('.div_put>.etaj').innerHTML=`${+data_etaj +1} этаж`
+            document.querySelector('.div_put>.square').innerHTML=`${CV[data_1].square }`
+
             document.querySelector('#info__right__block_month').value = Math.floor(((CV[data_1].price*kurs_USD)*CV[data_1].square-((((CV[data_1].price*kurs_USD)*CV[data_1].square/100*(CV[data_1].vznos)))))/(23-month_data))
+            
             document.querySelector('[data-info_month]').innerHTML=info_kart;
             document.querySelector('[data-info_vzno]').innerHTML =info_kart1;
             document.querySelector('body').classList.add('body');

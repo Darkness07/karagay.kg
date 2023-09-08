@@ -507,6 +507,14 @@ li {
 }
 
 
+.div_put{
+    position: absolute;
+    top: 30px;
+    left: 150px;
+    font-weight: 800;
+    font-size: 20px;
+}
+
 
 
 
